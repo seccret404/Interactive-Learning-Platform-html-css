@@ -1,0 +1,399 @@
+{
+    "id": "html",
+    "title": "HTML",
+    "icon": "code-bracket",
+    "order": 1,
+    "description": "Belajar HTML untuk membangun struktur dan isi halaman web, dari struktur dasar hingga daftar dan tabel.",
+    "requires": [],
+    "subModules": [
+        {
+            "id": 1,
+            "title": "Modul 1 — Pengenalan HTML dan Struktur Dasar",
+            "description": "Pengertian HTML dan struktur dasar dokumen: DOCTYPE, html, head, title, body.",
+            "slides": [
+                {
+                    "title": "Apa itu HTML?",
+                    "content": "HTML adalah singkatan dari HyperText Markup Language. HTML digunakan untuk membuat struktur halaman web.\n\nHTML bukan bahasa pemrograman, melainkan bahasa markup — ia menandai bagian-bagian halaman menggunakan tag.\n\nAnalogi sederhana:\nHTML = pondasi dan kerangka rumah\nCSS = cat dan dekorasi rumah"
+                },
+                {
+                    "title": "Mengapa Belajar HTML?",
+                    "content": "HTML digunakan untuk membangun berbagai jenis website:\n• Website sekolah\n• Website perusahaan\n• Blog\n• Portofolio\n• Toko online\n\nHampir seluruh website di internet menggunakan HTML sebagai dasar pembangun halaman web."
+                },
+                {
+                    "title": "Struktur Dasar HTML",
+                    "content": "Setiap dokumen HTML memiliki kerangka berikut:\n\n<!DOCTYPE html>\n<html>\n<head>\n    <title>Website Pertama</title>\n</head>\n<body>\n</body>\n</html>"
+                },
+                {
+                    "title": "Penjelasan Setiap Bagian",
+                    "content": "<!DOCTYPE html> — memberi tahu browser bahwa dokumen menggunakan HTML5.\n\n<html> — elemen utama yang membungkus seluruh halaman.\n\n<head> — berisi informasi halaman (misalnya judul).\n\n<title> — judul yang tampil pada tab browser.\n\n<body> — semua isi website ditampilkan di bagian ini."
+                },
+                {
+                    "title": "Contoh Halaman Pertama",
+                    "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Website Pertama</title>\n</head>\n<body>\n    <h1>Halo Dunia</h1>\n    <p>Selamat datang.</p>\n</body>\n</html>\n\nHasilnya, browser menampilkan judul 'Halo Dunia' dan teks 'Selamat datang.'"
+                },
+                {
+                    "title": "Tips & Rangkuman",
+                    "content": "Tips menulis HTML:\n✔ Gunakan indentasi agar rapi.\n✔ Tutup setiap tag.\n✔ Simpan dengan ekstensi .html.\n✔ Gunakan index.html sebagai halaman utama.\n\nRangkuman:\n✓ HTML adalah bahasa markup.\n✓ HTML menyusun struktur website.\n✓ Struktur dasar terdiri dari DOCTYPE, html, head, title, dan body.\n✓ Semua isi website ditulis di dalam body."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "HTML digunakan untuk ...",
+                        "options": [
+                            "Mengatur database",
+                            "Menyusun struktur halaman web",
+                            "Mengedit gambar",
+                            "Menghubungkan jaringan internet"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! HTML digunakan untuk menyusun struktur halaman web.",
+                        "feedback_wrong": "Kurang tepat. HTML berfungsi menyusun struktur halaman web."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "HTML adalah singkatan dari ...",
+                        "options": [
+                            "HyperText Markup Language",
+                            "HyperTool Markup Language",
+                            "HighText Machine Language",
+                            "HomeText Markup Language"
+                        ],
+                        "answer": 0,
+                        "feedback_correct": "Benar! HTML = HyperText Markup Language.",
+                        "feedback_wrong": "Ingat kembali: HTML = HyperText Markup Language."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Bagian yang memberi tahu browser bahwa dokumen menggunakan HTML5 adalah ...",
+                        "options": ["<html>", "<head>", "<body>", "<!DOCTYPE html>"],
+                        "answer": 3,
+                        "feedback_correct": "Benar! <!DOCTYPE html> menandakan dokumen HTML5.",
+                        "feedback_wrong": "Perhatikan lagi. <!DOCTYPE html> yang menandakan dokumen HTML5."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi struktur dasar HTML berikut agar benar.",
+                        "template": "<!DOCTYPE html>\n<[[0]]>\n<head>\n    <[[1]]>Profil Sekolah</[[1]]>\n</head>\n<[[2]]>\n</[[2]]>\n</html>",
+                        "blanks": [["html"], ["title"], ["body"]],
+                        "feedback_correct": "Hebat! Struktur dasar HTML kamu sudah benar.",
+                        "feedback_wrong": "Ingat urutannya: <html> membungkus semua, <title> di dalam head, <body> untuk isi."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Buat struktur HTML dasar untuk halaman Profil Sekolah.\n\n• Judul tab browser (title): Profil Sekolah\n• Isi halaman (body): Selamat Datang di Website Sekolah",
+                        "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                        "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<title", "message": "Harus ada tag <title>." },
+                            { "type": "contains", "value": "profil sekolah", "message": "Judul harus berisi 'Profil Sekolah'." },
+                            { "type": "contains", "value": "<body", "message": "Harus ada tag <body>." },
+                            { "type": "contains", "value": "selamat datang di website sekolah", "message": "Isi body harus 'Selamat Datang di Website Sekolah'." }
+                        ],
+                        "feedback_correct": "Hebat! Struktur HTML kamu sudah benar.",
+                        "feedback_wrong": "Masih ada yang kurang. Periksa kembali bagian <title> dan <body>."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Modul 2 — Elemen Teks dan Atribut HTML",
+            "description": "Heading, paragraf, tag pembuka & penutup, serta atribut pada tag HTML.",
+            "slides": [
+                {
+                    "title": "Heading pada HTML",
+                    "content": "Heading digunakan untuk membuat judul atau subjudul pada halaman web. HTML menyediakan heading dari <h1> sampai <h6>.\n\n<h1>Judul Utama</h1>\n<h2>Subjudul</h2>\n<h3>Judul Bagian</h3>\n\n<h1> adalah heading terbesar dan biasanya dipakai untuk judul utama. Semakin besar angkanya, ukuran teks semakin kecil."
+                },
+                {
+                    "title": "Paragraf pada HTML",
+                    "content": "Paragraf digunakan untuk menampilkan teks penjelasan. Paragraf ditulis menggunakan tag <p>.\n\n<p>HTML adalah bahasa markup untuk membuat struktur halaman web.</p>\n\nJika ingin menulis teks biasa atau penjelasan, gunakan <p>, bukan <h1>."
+                },
+                {
+                    "title": "Perbedaan Heading dan Paragraf",
+                    "content": "Heading dan paragraf sama-sama menampilkan teks, tetapi fungsinya berbeda.\n\n<h1>–<h6> → untuk judul atau subjudul\n<p> → untuk teks penjelasan atau isi\n\nHeading memberi struktur judul, sedangkan paragraf memberi isi penjelasan."
+                },
+                {
+                    "title": "Tag Pembuka dan Tag Penutup",
+                    "content": "Sebagian besar elemen HTML memiliki tag pembuka dan tag penutup.\n\n<p>Ini adalah paragraf.</p>\n\n<p>  = tag pembuka\n</p> = tag penutup (ditandai garis miring /)\n\nBiasakan menulis tag pembuka dan penutup secara lengkap agar kode rapi."
+                },
+                {
+                    "title": "Atribut pada HTML",
+                    "content": "Atribut adalah informasi tambahan pada tag HTML, ditulis di dalam tag pembuka.\n\nBentuk umum:\n<namaTag namaAtribut=\"nilai\">Isi</namaTag>\n\nContoh:\n<p title=\"Informasi HTML\">HTML membuat struktur website.</p>\n\ntitle adalah nama atribut, dan \"Informasi HTML\" adalah nilai atribut."
+                },
+                {
+                    "title": "Rangkuman",
+                    "content": "✓ Heading (<h1>–<h6>) untuk judul/subjudul.\n✓ <h1> heading terbesar, untuk judul utama.\n✓ Paragraf menggunakan tag <p>.\n✓ Sebagian besar tag memiliki pembuka dan penutup.\n✓ Atribut adalah informasi tambahan pada tag pembuka."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Heading pada HTML digunakan untuk ...",
+                        "options": [
+                            "Menampilkan gambar",
+                            "Membuat judul atau subjudul halaman",
+                            "Membuat tabel",
+                            "Membuat hyperlink"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Heading dipakai untuk judul atau subjudul.",
+                        "feedback_wrong": "Kurang tepat. Heading digunakan untuk membuat judul atau subjudul."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Tag yang digunakan untuk membuat paragraf adalah ...",
+                        "options": ["<h1>", "<img>", "<p>", "<table>"],
+                        "answer": 2,
+                        "feedback_correct": "Benar! Paragraf menggunakan tag <p>.",
+                        "feedback_wrong": "Ingat, paragraf ditulis dengan tag <p>."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Perhatikan kode: <p title=\"Profil Sekolah\">SMK Harapan Bangsa</p>. Klik bagian yang merupakan atribut HTML.",
+                        "code_parts": ["<p", "title=\"Profil Sekolah\"", "SMK Harapan Bangsa", "</p>"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Atribut adalah informasi tambahan pada tag pembuka.",
+                        "feedback_wrong": "Atribut selalu berada pada tag pembuka, bentuknya namaAtribut=\"nilai\"."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi kode berikut agar menjadi heading utama.",
+                        "template": "<[[0]]>Profil Sekolah</[[0]]>",
+                        "blanks": [["h1"]],
+                        "feedback_correct": "Hebat! Kamu menggunakan tag heading dengan benar.",
+                        "feedback_wrong": "Heading utama menggunakan tag <h1>."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Buat halaman profil sekolah dengan ketentuan:\n\n• Judul utama (h1): SMK Harapan Bangsa\n• Dua paragraf (p) berisi penjelasan tentang sekolah tersebut.",
+                        "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                        "starter_code": "<body>\n\n</body>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<h1", "message": "Harus ada judul utama <h1>." },
+                            { "type": "contains", "value": "smk harapan bangsa", "message": "Judul harus berisi 'SMK Harapan Bangsa'." },
+                            { "type": "count", "value": "<p", "min": 2, "message": "Harus ada minimal dua paragraf (<p>)." }
+                        ],
+                        "feedback_correct": "Bagus! Heading dan paragraf sudah tepat.",
+                        "feedback_wrong": "Periksa lagi: perlu satu <h1> dan dua <p>."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Modul 3 — Gambar dan Hyperlink",
+            "description": "Menampilkan gambar dengan <img> (src, alt) dan membuat tautan dengan <a> (href).",
+            "slides": [
+                {
+                    "title": "Menampilkan Gambar",
+                    "content": "Gambar ditampilkan menggunakan tag <img>. Tag <img> tidak memiliki tag penutup.\n\n<img src=\"sekolah.jpg\" alt=\"Gedung sekolah\">\n\nsrc  = alamat/lokasi gambar\nalt  = teks alternatif jika gambar gagal tampil"
+                },
+                {
+                    "title": "Atribut src dan alt",
+                    "content": "Pada tag <img> ada dua atribut penting:\n\nsrc → menentukan lokasi file gambar\nalt → teks alternatif jika gambar gagal dimuat\n\nKesalahan umum:\n<img href=\"sekolah.jpg\">\nSalah, karena gambar menggunakan atribut src, bukan href."
+                },
+                {
+                    "title": "Struktur Folder Gambar",
+                    "content": "Gambar sering disimpan di folder khusus, misalnya images.\n\nproject/\n├── index.html\n└── images/\n    └── sekolah.jpg\n\nJika gambar ada di dalam folder images, tulis:\n<img src=\"images/sekolah.jpg\" alt=\"Gedung sekolah\">\n\nJika nama folder tidak ditulis, gambar tidak akan muncul."
+                },
+                {
+                    "title": "Membuat Hyperlink",
+                    "content": "Hyperlink adalah tautan untuk berpindah halaman. Dibuat dengan tag <a>.\n\n<a href=\"profil.html\">Lihat Profil</a>\n\nhref = tujuan link\n\"Lihat Profil\" = teks yang diklik pengguna"
+                },
+                {
+                    "title": "Jenis Hyperlink",
+                    "content": "1. Link antarhalaman (di dalam proyek yang sama):\n<a href=\"profil.html\">Profil</a>\n\n2. Link eksternal (website lain):\n<a href=\"https://www.kemdikbud.go.id\">Kemdikbud</a>\n\nKesalahan umum: <a src=\"profil.html\">. Salah, karena <a> menggunakan href, bukan src."
+                },
+                {
+                    "title": "Rangkuman",
+                    "content": "✓ Gambar ditampilkan dengan <img>.\n✓ src = lokasi gambar, alt = teks alternatif.\n✓ Hyperlink dibuat dengan <a>.\n✓ href = tujuan link.\n✓ Link bisa ke halaman dalam proyek atau website lain."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <img href=\"sekolah.jpg\" alt=\"Gedung Sekolah\">. Gambar tidak tampil karena ...",
+                        "options": [
+                            "Tag <img> harus ditutup dengan </img>",
+                            "Atribut href seharusnya diganti menjadi src",
+                            "Atribut alt tidak boleh digunakan",
+                            "Nama gambar harus menggunakan huruf kapital"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Untuk menampilkan gambar, gunakan atribut src, bukan href.",
+                        "feedback_wrong": "Perhatikan atributnya. Gambar menggunakan src, bukan href."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Gambar sekolah.jpg berada di folder images. Kode yang benar untuk menampilkannya adalah ...",
+                        "options": [
+                            "<img src=\"sekolah.jpg\" alt=\"Sekolah\">",
+                            "<img href=\"images/sekolah.jpg\" alt=\"Sekolah\">",
+                            "<img src=\"images/sekolah.jpg\" alt=\"Sekolah\">",
+                            "<image src=\"images/sekolah.jpg\" alt=\"Sekolah\">"
+                        ],
+                        "answer": 2,
+                        "feedback_correct": "Benar! Karena gambar ada di folder images, tulis images/sekolah.jpg.",
+                        "feedback_wrong": "Gambar ada di dalam folder images, jadi src harus images/sekolah.jpg."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <a src=\"profil.html\">Profil Sekolah</a>. Kesalahan pada kode tersebut adalah ...",
+                        "options": [
+                            "Tag <a> harus diganti menjadi <img>",
+                            "Atribut src seharusnya diganti menjadi href",
+                            "Teks 'Profil Sekolah' harus dihapus",
+                            "File profil.html harus diganti menjadi gambar"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Hyperlink menggunakan tag <a> dengan atribut href.",
+                        "feedback_wrong": "Hyperlink menggunakan href, bukan src."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang menunjukkan teks alternatif gambar.",
+                        "code_parts": ["<img", "src=\"images/sekolah.jpg\"", "alt=\"Gedung Sekolah\"", ">"],
+                        "answer": 2,
+                        "feedback_correct": "Benar! Atribut alt berisi teks alternatif gambar.",
+                        "feedback_wrong": "Teks alternatif gambar ditulis pada atribut alt."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi kode berikut agar menjadi hyperlink menuju halaman profil.html.",
+                        "template": "<a [[0]]>Profil Sekolah</a>",
+                        "blanks": [["href=\"profil.html\"", "href='profil.html'"]],
+                        "feedback_correct": "Hebat! Hyperlink berhasil dibuat menggunakan atribut href.",
+                        "feedback_wrong": "Hyperlink menggunakan atribut href untuk menentukan halaman tujuan, contoh: href=\"profil.html\"."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Buat bagian halaman profil sekolah yang berisi:\n\n• Gambar sekolah.jpg dengan teks alternatif 'Gedung sekolah'\n• Hyperlink menuju profil.html dengan teks 'Lihat Profil Sekolah'",
+                        "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                        "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<img", "message": "Harus ada tag <img>." },
+                            { "type": "contains", "value": "src=", "message": "Gambar harus memiliki atribut src." },
+                            { "type": "contains", "value": "sekolah.jpg", "message": "Gambar harus mengarah ke sekolah.jpg." },
+                            { "type": "contains", "value": "alt=", "message": "Gambar harus memiliki atribut alt." },
+                            { "type": "contains", "value": "<a", "message": "Harus ada hyperlink <a>." },
+                            { "type": "contains", "value": "href=", "message": "Hyperlink harus memiliki atribut href." },
+                            { "type": "contains", "value": "profil.html", "message": "Hyperlink harus menuju profil.html." }
+                        ],
+                        "feedback_correct": "Bagus! Gambar dan hyperlink sudah benar.",
+                        "feedback_wrong": "Periksa kembali atribut src, alt, dan href."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "title": "Modul 4 — Daftar, Tabel, dan Mini Project HTML",
+            "description": "Membuat daftar (<ul>, <ol>, <li>) dan tabel (<table>, <tr>, <th>, <td>), lalu menggabungkannya.",
+            "slides": [
+                {
+                    "title": "Daftar pada HTML",
+                    "content": "Daftar digunakan untuk menyajikan informasi berupa poin-poin, seperti menu, fasilitas, atau langkah kerja.\n\nSetiap item daftar ditulis dengan tag <li>, dan harus berada di dalam <ul> atau <ol>."
+                },
+                {
+                    "title": "Daftar Tidak Berurutan <ul>",
+                    "content": "Digunakan jika urutan tidak penting, ditampilkan dengan bullet.\n\n<ul>\n    <li>RPL</li>\n    <li>TKJ</li>\n    <li>DKV</li>\n</ul>\n\n<ul> = unordered list, <li> = list item. Setiap item harus dibungkus <li>."
+                },
+                {
+                    "title": "Daftar Berurutan <ol>",
+                    "content": "Digunakan jika urutan penting, ditampilkan dengan nomor otomatis.\n\n<ol>\n    <li>Buka code editor</li>\n    <li>Buat file index.html</li>\n    <li>Tulis struktur HTML</li>\n</ol>\n\nGunakan <ul> untuk daftar biasa, dan <ol> untuk daftar yang berurutan."
+                },
+                {
+                    "title": "Tabel pada HTML",
+                    "content": "Tabel menyajikan data dalam baris dan kolom. Tag utamanya:\n\n<table> → membungkus seluruh tabel\n<tr> → membuat baris\n<th> → judul kolom\n<td> → isi data\n\nSetiap baris data harus ditulis di dalam <tr>."
+                },
+                {
+                    "title": "Contoh Tabel",
+                    "content": "<table border=\"1\">\n    <tr>\n        <th>Nama</th>\n        <th>Kelas</th>\n    </tr>\n    <tr>\n        <td>Andi</td>\n        <td>XI RPL</td>\n    </tr>\n</table>\n\nBaris pertama berisi judul kolom (<th>), baris berikutnya berisi data (<td>)."
+                },
+                {
+                    "title": "Rangkuman",
+                    "content": "✓ <ul> untuk daftar tidak berurutan, <ol> untuk daftar berurutan.\n✓ Setiap item daftar ditulis dengan <li>.\n✓ Tabel dibuat dengan <table>.\n✓ <tr> = baris, <th> = judul kolom, <td> = isi data.\n✓ Mini project menggabungkan beberapa elemen HTML dalam satu halaman."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <ul><p>HTML</p><p>CSS</p></ul>. Mengapa daftar ini kurang tepat?",
+                        "options": [
+                            "Tag <ul> harus diganti menjadi <ol>",
+                            "Tag <p> seharusnya diganti menjadi <li>",
+                            "Tag <ul> harus dihapus",
+                            "Tag <p> harus diganti menjadi <h1>"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Setiap item daftar harus ditulis dengan <li>.",
+                        "feedback_wrong": "Item di dalam daftar harus memakai <li>, bukan <p>."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Sebuah website ingin menampilkan langkah-langkah membuat akun dari langkah pertama sampai terakhir. Jenis daftar yang tepat adalah ...",
+                        "options": ["<ul>", "<table>", "<ol>", "<li>"],
+                        "answer": 2,
+                        "feedback_correct": "Tepat! Daftar berurutan (<ol>) dipakai ketika urutan penting.",
+                        "feedback_wrong": "Untuk urutan langkah, gunakan daftar berurutan <ol>."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan tabel: <table><th>Nama</th><th>Kelas</th><td>Andi</td><td>XI RPL</td></table>. Mengapa kode ini kurang tepat?",
+                        "options": [
+                            "Tag <table> harus diganti menjadi <div>",
+                            "Data tabel harus disusun ke dalam tag <tr>",
+                            "Tag <td> harus diganti menjadi <li>",
+                            "Tabel tidak boleh memiliki <th>"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Setiap data tabel harus berada di dalam baris <tr>.",
+                        "feedback_wrong": "Setiap baris tabel harus diawali dengan tag <tr>."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang merupakan judul kolom tabel.",
+                        "code_parts": ["<table>", "<tr>", "<th>Nama</th>", "<td>Andi</td>"],
+                        "answer": 2,
+                        "feedback_correct": "Benar! Tag <th> digunakan untuk judul kolom pada tabel.",
+                        "feedback_wrong": "Judul kolom menggunakan tag <th>."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi kode berikut agar menjadi daftar tidak berurutan yang benar.",
+                        "template": "<[[0]]>\n    <li>HTML</li>\n    <li>CSS</li>\n</[[0]]>",
+                        "blanks": [["ul"]],
+                        "feedback_correct": "Hebat! Kamu membuat daftar tidak berurutan dengan <ul>.",
+                        "feedback_wrong": "Daftar tidak berurutan menggunakan tag <ul>."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Buat bagian halaman profil sekolah yang berisi:\n\n• Daftar program keahlian (ul) dengan item: RPL, TKJ, DKV\n• Tabel data siswa dengan judul kolom Nama dan Kelas, serta satu baris data: Andi | XI RPL",
+                        "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                        "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<ul", "message": "Harus ada daftar <ul>." },
+                            { "type": "count", "value": "<li", "min": 3, "message": "Daftar harus punya minimal tiga <li>." },
+                            { "type": "contains", "value": "rpl", "message": "Daftar harus memuat 'RPL'." },
+                            { "type": "contains", "value": "<table", "message": "Harus ada tabel <table>." },
+                            { "type": "count", "value": "<tr", "min": 2, "message": "Tabel harus punya minimal dua baris <tr>." },
+                            { "type": "contains", "value": "<th", "message": "Tabel harus punya judul kolom <th>." },
+                            { "type": "contains", "value": "<td", "message": "Tabel harus punya isi data <td>." }
+                        ],
+                        "feedback_correct": "Keren! Kamu berhasil menggabungkan daftar dan tabel.",
+                        "feedback_wrong": "Periksa kembali struktur <ul>/<li> dan <table>/<tr>/<th>/<td>."
+                    }
+                ]
+            }
+        }
+    ]
+}

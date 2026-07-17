@@ -1,0 +1,433 @@
+{
+    "id": "css",
+    "title": "CSS",
+    "icon": "paint-brush",
+    "order": 2,
+    "description": "Belajar CSS untuk mempercantik dan menata halaman web: penerapan CSS, selector, tampilan, hingga layout dan final project.",
+    "requires": ["html"],
+    "subModules": [
+        {
+            "id": 1,
+            "title": "Modul 5 — Pengenalan CSS dan Cara Penerapan",
+            "description": "Pengertian dan fungsi CSS, sintaks dasar, inline/internal/external CSS, serta tag <link>.",
+            "slides": [
+                {
+                    "title": "Apa Itu CSS?",
+                    "content": "CSS adalah singkatan dari Cascading Style Sheets. CSS digunakan untuk mengatur tampilan visual elemen HTML: warna teks, ukuran huruf, latar belakang, jarak, garis tepi, dan tata letak.\n\nHTML membentuk struktur dan isi halaman, sedangkan CSS membuat tampilannya lebih menarik.\n\nAnalogi: HTML = kerangka rumah, CSS = warna dan dekorasi rumah."
+                },
+                {
+                    "title": "Sintaks Dasar CSS",
+                    "content": "Perhatikan contoh berikut:\n\nh1 {\n    color: blue;\n}\n\nh1 disebut selector.\ncolor disebut property.\nblue disebut value.\n\nBentuk umum:\nselector {\n    property: value;\n}"
+                },
+                {
+                    "title": "Tiga Cara Menerapkan CSS",
+                    "content": "1. Inline CSS — pada atribut style di tag HTML:\n<h1 style=\"color: blue;\">Judul</h1>\n\n2. Internal CSS — di dalam <style> pada <head>:\n<style>\n  h1 { color: blue; }\n</style>\n\n3. External CSS — file .css terpisah:\n<link rel=\"stylesheet\" href=\"style.css\">\n\nExternal CSS paling sesuai untuk website beberapa halaman karena lebih rapi."
+                },
+                {
+                    "title": "Menghubungkan CSS Eksternal",
+                    "content": "File CSS eksternal dihubungkan dengan tag <link> di dalam <head>:\n\n<head>\n    <title>Profil Sekolah</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n\nrel=\"stylesheet\" menunjukkan file yang dihubungkan adalah CSS.\nhref=\"style.css\" menunjukkan nama dan lokasi file CSS."
+                },
+                {
+                    "title": "Mengapa CSS Tidak Berfungsi?",
+                    "content": "CSS tidak diterapkan jika penghubungnya salah:\n\n• Atribut salah: <link ... src=\"style.css\"> → seharusnya href.\n• Nama file berbeda: href=\"styles.css\" padahal file bernama style.css.\n• File dalam folder: jika ada di css/, tulis href=\"css/style.css\".\n• Penempatan: tag <link> sebaiknya di dalam <head>."
+                },
+                {
+                    "title": "Rangkuman Modul 5",
+                    "content": "✓ CSS = Cascading Style Sheets, mengatur tampilan halaman.\n✓ Sintaks CSS: selector, property, dan value.\n✓ CSS bisa inline, internal, dan external.\n✓ External CSS dihubungkan dengan tag <link> di dalam <head>.\n✓ Nama dan lokasi file pada href harus benar."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "File index.html berisi <h1>Belajar CSS</h1> dan style.css berisi h1 { color: blue; }, tetapi warna judul belum berubah. Mengapa?",
+                        "options": [
+                            "HTML tidak mendukung CSS",
+                            "File HTML belum dihubungkan dengan file CSS",
+                            "CSS hanya dapat digunakan pada gambar",
+                            "File CSS harus berada di dalam tag <body>"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! HTML harus dihubungkan ke CSS dengan tag <link>.",
+                        "feedback_wrong": "Warna belum berubah karena file HTML belum dihubungkan ke CSS lewat <link>."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <link rel=\"stylesheet\" src=\"style.css\">. Mengapa CSS tidak diterapkan?",
+                        "options": [
+                            "Tag <link> harus diganti menjadi <style>",
+                            "Atribut src seharusnya menggunakan href",
+                            "File CSS harus berada di folder images",
+                            "CSS tidak boleh ditulis pada <head>"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Tag <link> menggunakan atribut href, bukan src.",
+                        "feedback_wrong": "Tag <link> menghubungkan CSS dengan atribut href, bukan src."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Struktur proyek: index.html berada di root, dan style.css berada di dalam folder css/. Kode <link> yang benar adalah ...",
+                        "options": [
+                            "<link rel=\"stylesheet\" href=\"style.css\">",
+                            "<link rel=\"stylesheet\" href=\"css/style.css\">",
+                            "<link rel=\"stylesheet\" href=\"styles/style.css\">",
+                            "<link rel=\"stylesheet\" href=\"images/style.css\">"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Karena file ada di folder css, tulis href=\"css/style.css\".",
+                        "feedback_wrong": "File ada di folder css, jadi href harus css/style.css."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang menunjukkan lokasi file CSS.",
+                        "code_parts": ["<link", "rel=\"stylesheet\"", "href=\"css/style.css\"", ">"],
+                        "answer": 2,
+                        "feedback_correct": "Benar! Atribut href menunjukkan nama dan lokasi file CSS.",
+                        "feedback_wrong": "Lokasi file CSS ditunjukkan oleh atribut href."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi kode berikut agar menghubungkan file style.css.",
+                        "template": "<head>\n    <link rel=\"stylesheet\" [[0]]>\n</head>",
+                        "blanks": [["href=\"style.css\"", "href='style.css'"]],
+                        "feedback_correct": "Hebat! File CSS berhasil dihubungkan dengan href.",
+                        "feedback_wrong": "Gunakan atribut href untuk menunjuk file, contoh: href=\"style.css\"."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Lengkapi bagian <head> halaman Profil Sekolah:\n\n• Judul tab browser (title): Profil Sekolah\n• Hubungkan file CSS eksternal bernama style.css",
+                        "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                        "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<title", "message": "Harus ada tag <title>." },
+                            { "type": "contains", "value": "profil sekolah", "message": "Judul harus 'Profil Sekolah'." },
+                            { "type": "contains", "value": "<link", "message": "Harus ada tag <link>." },
+                            { "type": "contains", "value": "stylesheet", "message": "Tag <link> harus memiliki rel=\"stylesheet\"." },
+                            { "type": "contains", "value": "href=", "message": "Tag <link> harus memiliki atribut href." },
+                            { "type": "contains", "value": "style.css", "message": "Harus menghubungkan file style.css." }
+                        ],
+                        "feedback_correct": "Bagus! Halaman sudah terhubung ke CSS eksternal.",
+                        "feedback_wrong": "Periksa kembali <title> dan tag <link rel=\"stylesheet\" href=\"style.css\">."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Modul 6 — Sintaks dan Selector CSS",
+            "description": "Element selector, class selector (.), id selector (#), dan kapan menggunakannya.",
+            "slides": [
+                {
+                    "title": "Mengenal Selector",
+                    "content": "CSS bekerja dengan cara memilih elemen HTML, lalu memberi aturan tampilan. Bagian yang memilih elemen disebut selector.\n\nh1 {\n    color: blue;\n}\n\nDi sini h1 adalah selector, dan color: blue; adalah aturan tampilannya.\n\nTanpa selector, CSS tidak tahu elemen mana yang akan diubah."
+                },
+                {
+                    "title": "Element Selector",
+                    "content": "Element selector memilih semua elemen dengan nama tag yang sama.\n\nh1 {\n    color: blue;\n}\np {\n    color: gray;\n}\n\nSemua <h1> menjadi biru dan semua <p> menjadi abu-abu. Element selector memengaruhi semua tag bernama sama."
+                },
+                {
+                    "title": "Class Selector",
+                    "content": "Class selector dipakai jika hanya elemen tertentu yang diberi gaya. Class selalu diawali tanda titik ( . ).\n\nHTML:\n<p class=\"deskripsi\">Belajar HTML</p>\n\nCSS:\n.deskripsi {\n    color: blue;\n}\n\nClass dapat digunakan oleh lebih dari satu elemen."
+                },
+                {
+                    "title": "ID Selector",
+                    "content": "ID selector dipakai ketika hanya ada satu elemen khusus. ID selalu diawali tanda pagar ( # ).\n\nHTML:\n<h1 id=\"judulUtama\">Belajar HTML</h1>\n\nCSS:\n#judulUtama {\n    color: red;\n}\n\nSatu nilai id sebaiknya hanya dipakai oleh satu elemen pada halaman."
+                },
+                {
+                    "title": "Perbedaan Selector",
+                    "content": "Element ( tanpa simbol ) → semua tag bernama sama.\nClass ( . ) → beberapa elemen dengan gaya sama.\nID ( # ) → satu elemen khusus.\n\nContoh:\nh1 { }\n.info { }\n#kirim { }"
+                },
+                {
+                    "title": "Rangkuman Modul 6",
+                    "content": "✓ Selector memilih elemen HTML yang akan diberi gaya.\n✓ Sintaks: selector { property: value; }\n✓ Element selector memilih semua tag yang sama.\n✓ Class selector diawali titik ( . ).\n✓ ID selector diawali pagar ( # ).\n✓ Class untuk beberapa elemen, ID untuk satu elemen khusus."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <h1>Belajar HTML</h1> dan <p>Belajar CSS</p>. Agar hanya judul berubah menjadi biru, selector yang tepat adalah ...",
+                        "options": ["p", "h1", "body", "*"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Selector h1 hanya memilih elemen heading.",
+                        "feedback_wrong": "Untuk memilih judul, gunakan element selector h1."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <p class=\"info\">Profil Sekolah</p> dan <p>Kontak</p>. Agar hanya paragraf pertama berubah warna, selector yang tepat adalah ...",
+                        "options": ["p", ".info", "#info", "body"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Class selector .info hanya memilih elemen ber-class info.",
+                        "feedback_wrong": "Gunakan class selector .info (diawali titik) untuk memilih paragraf ber-class info."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: <h1 id=\"judulUtama\">Belajar HTML</h1>. Selector yang benar untuk elemen tersebut adalah ...",
+                        "options": [".judulUtama", "#judulUtama", "h1id", "judulUtama"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! ID selector diawali tanda pagar: #judulUtama.",
+                        "feedback_wrong": "ID selector diawali tanda pagar ( # ), jadi #judulUtama."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang merupakan Class Selector.",
+                        "code_parts": ["h1", ".menu", "#header", "{"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Class selector diawali tanda titik ( . ).",
+                        "feedback_wrong": "Class selector selalu diawali tanda titik, contohnya .menu."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi CSS berikut agar memilih elemen yang memiliki class menu.",
+                        "template": "[[0]] {\n    color: blue;\n}",
+                        "blanks": [[".menu"]],
+                        "feedback_correct": "Hebat! Kamu memilih class dengan benar menggunakan .menu.",
+                        "feedback_wrong": "Class selector diawali titik, jadi tulis .menu."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Tulis aturan CSS untuk halaman profil sekolah:\n\n• Elemen h1 diberi warna biru (blue)\n• Paragraf dengan class \"deskripsi\" diberi warna abu-abu (gray)\n• Bagian dengan id \"utama\" diberi background putih (white)",
+                        "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                        "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                        "language": "css",
+                        "test_cases": [
+                            { "type": "contains", "value": "h1", "message": "Harus ada selector h1." },
+                            { "type": "contains", "value": "blue", "message": "h1 harus berwarna blue." },
+                            { "type": "contains", "value": ".deskripsi", "message": "Harus ada class selector .deskripsi." },
+                            { "type": "contains", "value": "gray", "message": ".deskripsi harus berwarna gray." },
+                            { "type": "contains", "value": "#utama", "message": "Harus ada id selector #utama." },
+                            { "type": "contains", "value": "background", "message": "#utama harus memiliki background." },
+                            { "type": "contains", "value": "white", "message": "background #utama harus white." }
+                        ],
+                        "feedback_correct": "Keren! Element, class, dan id selector sudah tepat.",
+                        "feedback_wrong": "Periksa kembali penggunaan h1, .deskripsi, dan #utama."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Modul 7 — Mengatur Tampilan dengan CSS",
+            "description": "Warna, background, font, box model, margin, padding, dan border.",
+            "slides": [
+                {
+                    "title": "Warna Teks dan Latar Belakang",
+                    "content": "CSS dapat mengubah warna teks dan latar belakang.\n\ncolor → mengatur warna teks\nbackground-color → mengatur warna latar belakang\n\nh1 { color: blue; }\np { background-color: lightgray; }\n\nPerhatikan: color mengubah warna teks, sedangkan background-color mengubah warna latar."
+                },
+                {
+                    "title": "Ukuran dan Jenis Huruf",
+                    "content": "font-size → ukuran teks\nfont-family → jenis huruf\nfont-weight → ketebalan teks\n\nh1 {\n    font-size: 32px;\n    font-family: Arial;\n    font-weight: bold;\n}\n\nUkuran teks harus memiliki satuan. Benar: font-size: 20px; Kurang tepat: font-size: 20;"
+                },
+                {
+                    "title": "Box Model",
+                    "content": "Setiap elemen HTML dibayangkan sebagai kotak dengan bagian:\n\nMargin → Border → Padding → Content\n\nContent = isi elemen.\nPadding = jarak antara isi dan garis tepi.\nBorder = garis yang mengelilingi elemen.\nMargin = jarak di luar elemen.\n\nAnalogi foto dalam bingkai: foto = content, jarak foto ke bingkai = padding, bingkai = border, jarak bingkai ke benda lain = margin."
+                },
+                {
+                    "title": "Margin vs Padding",
+                    "content": "Keduanya mengatur jarak, tetapi posisinya berbeda.\n\npadding → jarak di dalam elemen (antara isi dan border)\nmargin → jarak di luar elemen\n\n.card {\n    padding: 20px;\n    margin: 30px;\n    border: 1px solid black;\n}\n\nUntuk memberi ruang antara teks dan garis tepi, gunakan padding, bukan margin."
+                },
+                {
+                    "title": "Border",
+                    "content": "Property border membuat garis tepi.\n\nBentuk umum: border: ketebalan jenis warna;\n\n.card {\n    border: 1px solid black;\n}\n\n1px = ketebalan, solid = jenis garis, black = warna.\nJenis garis: solid (utuh), dashed (putus-putus), dotted (titik-titik)."
+                },
+                {
+                    "title": "Rangkuman Modul 7",
+                    "content": "✓ color = warna teks, background-color = warna latar.\n✓ font-size = ukuran teks (harus bersatuan, mis. px).\n✓ font-family = jenis huruf.\n✓ padding = jarak di dalam elemen, margin = jarak di luar.\n✓ border = garis tepi.\n✓ Kesalahan selector/property/value/satuan membuat CSS tidak bekerja."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: h1 { color: red; }. Apa pengaruhnya terhadap elemen <h1>?",
+                        "options": [
+                            "Mengubah warna latar belakang menjadi merah",
+                            "Mengubah warna teks menjadi merah",
+                            "Mengubah ukuran teks menjadi merah",
+                            "Menambahkan garis tepi berwarna merah",
+                            "Memberikan jarak luar berwarna merah"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! Property color mengatur warna teks.",
+                        "feedback_wrong": "Property color mengatur warna teks, bukan latar atau ukuran."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: p { font-size: 20; }. Ukuran teks tidak diterapkan dengan tepat karena ...",
+                        "options": [
+                            "Selector p tidak dapat digunakan dalam CSS",
+                            "Property font-size hanya dapat digunakan pada heading",
+                            "Nilai 20 tidak memiliki satuan ukuran",
+                            "Tanda titik dua harus diganti dengan tanda sama dengan",
+                            "Ukuran teks harus ditulis menggunakan property text-size"
+                        ],
+                        "answer": 2,
+                        "feedback_correct": "Tepat! Nilai ukuran perlu satuan, misalnya 20px.",
+                        "feedback_wrong": "Nilai font-size memerlukan satuan seperti px, jadi 20px."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Perhatikan: .card { border: 1px solid black; padding: 20px; margin: 30px; }. Pernyataan yang tepat adalah ...",
+                        "options": [
+                            "padding mengatur jarak di luar elemen dan margin di dalam elemen",
+                            "padding dan margin hanya digunakan untuk mengatur warna",
+                            "padding mengatur ketebalan border dan margin mengatur jenis border",
+                            "padding mengatur jarak antara isi dan border, sedangkan margin mengatur jarak di luar elemen",
+                            "padding dan margin memiliki fungsi yang sama persis"
+                        ],
+                        "answer": 3,
+                        "feedback_correct": "Benar! Padding di dalam elemen, margin di luar elemen.",
+                        "feedback_wrong": "Ingat box model: padding jarak isi ke border, margin jarak di luar elemen."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang digunakan untuk mengatur warna latar belakang.",
+                        "code_parts": [
+                            ".card",
+                            "color: black;",
+                            "background-color: lightblue;",
+                            "padding: 20px;",
+                            "border: 1px solid blue;"
+                        ],
+                        "answer": 2,
+                        "feedback_correct": "Tepat! background-color mengatur warna latar belakang.",
+                        "feedback_wrong": "Cari property yang khusus mengatur warna bagian belakang: background-color."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi kode berikut agar ukuran teks heading menjadi 32 piksel.",
+                        "template": "h1 {\n    color: darkblue;\n    [[0]]\n}",
+                        "blanks": [["font-size: 32px;", "font-size:32px;", "font-size: 32px", "font-size:32px"]],
+                        "feedback_correct": "Hebat! font-size dengan value 32px mengatur ukuran teks.",
+                        "feedback_wrong": "Gunakan property font-size, tanda titik dua, dan satuan px: font-size: 32px;"
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Tulis CSS untuk kartu profil sekolah:\n\n• body: background-color lightgray\n• h1: warna blue, ukuran 32px\n• .card: padding 20px, border 1px solid black",
+                        "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                        "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                        "language": "css",
+                        "test_cases": [
+                            { "type": "contains", "value": "background", "message": "body harus punya background-color." },
+                            { "type": "contains", "value": "lightgray", "message": "background body harus lightgray." },
+                            { "type": "contains", "value": "blue", "message": "h1 harus berwarna blue." },
+                            { "type": "contains", "value": "32px", "message": "Ukuran h1 harus 32px." },
+                            { "type": "contains", "value": ".card", "message": "Harus ada selector .card." },
+                            { "type": "contains", "value": "padding", "message": ".card harus memiliki padding." },
+                            { "type": "contains", "value": "border", "message": ".card harus memiliki border." },
+                            { "type": "contains", "value": "solid", "message": "Border .card gunakan jenis solid." }
+                        ],
+                        "feedback_correct": "Mantap! Tampilan kartu sudah rapi.",
+                        "feedback_wrong": "Periksa kembali background, warna, ukuran, padding, dan border."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "title": "Modul 8 — Layout dan Final Project HTML-CSS",
+            "description": "Layout dengan display: flex, navigasi, struktur halaman, dan menggabungkan HTML + CSS.",
+            "slides": [
+                {
+                    "title": "Mengapa Layout Dibutuhkan?",
+                    "content": "Layout adalah cara menempatkan dan menyusun elemen pada halaman web, misalnya: header, navigasi, konten utama, dan footer.\n\nTanpa pengaturan layout, elemen tampil berurutan dari atas ke bawah. Dengan CSS, elemen dapat disusun secara horizontal maupun vertikal agar halaman lebih teratur."
+                },
+                {
+                    "title": "Mengenal display: flex",
+                    "content": "Flexbox adalah cara sederhana mengatur posisi elemen. Agar sebuah elemen menjadi wadah flex:\n\n.container {\n    display: flex;\n}\n\nContoh HTML:\n<div class=\"container\">\n    <div class=\"card\">HTML</div>\n    <div class=\"card\">CSS</div>\n</div>\n\nHasilnya card disusun dalam satu baris. Catatan: display: flex diterapkan pada elemen pembungkus, bukan tiap card."
+                },
+                {
+                    "title": "Mengatur Posisi Flexbox",
+                    "content": "Setelah display: flex, atur posisi dan jarak dengan:\n\njustify-content → posisi horizontal\nalign-items → posisi pada arah silang\ngap → jarak antar-elemen\nflex-direction → arah susunan (row / column)\n\n.container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}"
+                },
+                {
+                    "title": "Navigasi Sederhana",
+                    "content": "Navigasi membantu pengguna berpindah halaman. Gabungan HTML dan CSS:\n\n<nav>\n    <a href=\"index.html\">Beranda</a>\n    <a href=\"profil.html\">Profil</a>\n    <a href=\"kontak.html\">Kontak</a>\n</nav>\n\nnav {\n    display: flex;\n    gap: 20px;\n    padding: 15px;\n    background-color: darkblue;\n}\nnav a { color: white; }"
+                },
+                {
+                    "title": "Struktur Website Sederhana",
+                    "content": "Website sederhana dapat dibagi menjadi beberapa bagian:\n\n<header> → bagian kepala halaman\n<nav> → menu navigasi\n<main> → isi utama\n<section> → kelompok isi tertentu\n<footer> → bagian bawah halaman\n\nTag-tag ini membuat struktur halaman lebih jelas."
+                },
+                {
+                    "title": "Rangkuman Modul 8",
+                    "content": "✓ Layout mengatur susunan elemen.\n✓ display: flex membuat flex container.\n✓ gap mengatur jarak antar-elemen, justify-content mengatur posisi.\n✓ Navigasi disusun dengan <nav> dan hyperlink.\n✓ Website sederhana terdiri dari header, nav, main, dan footer.\n✓ Final project menggabungkan seluruh materi HTML dan CSS."
+                }
+            ],
+            "quiz": {
+                "questions": [
+                    {
+                        "type": "multiple_choice",
+                        "question": "Agar sebuah elemen menjadi wadah (container) flex, property yang tepat adalah ...",
+                        "options": ["display: block;", "display: flex;", "flex: display;", "align: center;"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! display: flex membuat elemen menjadi flex container.",
+                        "feedback_wrong": "Gunakan display: flex; untuk membuat wadah flex."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Property display: flex sebaiknya diterapkan pada ...",
+                        "options": [
+                            "setiap card di dalamnya",
+                            "elemen pembungkus (container)",
+                            "tag <a> saja",
+                            "tag <title>"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! display: flex diterapkan pada elemen pembungkus.",
+                        "feedback_wrong": "display: flex diterapkan pada elemen pembungkus, bukan tiap card."
+                    },
+                    {
+                        "type": "multiple_choice",
+                        "question": "Property yang digunakan untuk mengatur jarak antar-elemen pada flexbox adalah ...",
+                        "options": ["margin-flex", "gap", "space", "padding-between"],
+                        "answer": 1,
+                        "feedback_correct": "Benar! gap mengatur jarak antar-elemen flex.",
+                        "feedback_wrong": "Jarak antar-elemen flex diatur dengan property gap."
+                    },
+                    {
+                        "type": "identify",
+                        "prompt": "Klik bagian kode yang membuat elemen nav menyusun link dalam satu baris.",
+                        "code_parts": [
+                            "nav {",
+                            "display: flex;",
+                            "gap: 20px;",
+                            "background-color: darkblue;"
+                        ],
+                        "answer": 1,
+                        "feedback_correct": "Benar! display: flex menyusun elemen dalam satu baris.",
+                        "feedback_wrong": "Yang menyusun link dalam satu baris adalah display: flex;."
+                    },
+                    {
+                        "type": "fill_code",
+                        "prompt": "Lengkapi CSS berikut agar container menjadi flexbox.",
+                        "template": ".container {\n    [[0]]\n    gap: 20px;\n}",
+                        "blanks": [["display: flex;", "display:flex;", "display: flex", "display:flex"]],
+                        "feedback_correct": "Hebat! Container kini menjadi flexbox.",
+                        "feedback_wrong": "Gunakan display: flex; untuk menjadikan container sebagai flexbox."
+                    },
+                    {
+                        "type": "editor",
+                        "study_case": "Susun kerangka website Profil Sekolah (final project):\n\n• <header> berisi <h1> 'SMK Harapan Bangsa'\n• <nav> berisi 3 link: Beranda, Profil, Kontak\n• Daftar (ul) program keahlian dengan 3 item: RPL, TKJ, DKV",
+                        "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                        "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                        "language": "html",
+                        "test_cases": [
+                            { "type": "contains", "value": "<header", "message": "Harus ada <header>." },
+                            { "type": "contains", "value": "<h1", "message": "Header harus berisi <h1>." },
+                            { "type": "contains", "value": "smk harapan bangsa", "message": "Judul harus 'SMK Harapan Bangsa'." },
+                            { "type": "contains", "value": "<nav", "message": "Harus ada <nav>." },
+                            { "type": "count", "value": "<a", "min": 3, "message": "Navigasi harus punya minimal tiga link <a>." },
+                            { "type": "contains", "value": "beranda", "message": "Navigasi harus memuat 'Beranda'." },
+                            { "type": "contains", "value": "kontak", "message": "Navigasi harus memuat 'Kontak'." },
+                            { "type": "contains", "value": "<ul", "message": "Harus ada daftar <ul>." },
+                            { "type": "count", "value": "<li", "min": 3, "message": "Daftar program keahlian harus punya minimal tiga <li>." }
+                        ],
+                        "feedback_correct": "Luar biasa! Kerangka website kamu sudah lengkap. 🎉",
+                        "feedback_wrong": "Periksa kembali: header + h1, nav dengan 3 link, dan ul dengan 3 item."
+                    }
+                ]
+            }
+        }
+    ]
+}
