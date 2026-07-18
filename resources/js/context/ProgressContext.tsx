@@ -7,12 +7,18 @@ import {
     useState,
     type ReactNode,
 } from 'react';
-import type { Attempt, ModuleSummary, SessionProgress } from '@/types';
+import type {
+    Attempt,
+    ModuleSummary,
+    SessionProgress,
+    UserProfile,
+} from '@/types';
 import {
     loadProgress,
     saveProgress,
     quizKey,
     emptyProgress,
+    randomTheme,
 } from '@/storage/session';
 import { recomputeCompletedModules } from '@/utils/progress';
 import { formatTime, uid } from '@/utils/time';
@@ -36,6 +42,10 @@ interface ProgressContextValue {
     attemptsFor: (moduleId: string, subModuleId: number) => Attempt[];
     /** Remember where the user currently is. */
     setCurrent: (moduleId: string, subModuleId: number) => void;
+    /** Change the learner's case-study theme (quiz variants + Final Project). */
+    setTheme: (themeId: string) => void;
+    /** Save the learner's editable profile. */
+    setProfile: (profile: UserProfile) => void;
     /** Wipe all progress (used by "Reset progress"). */
     reset: () => void;
 }
@@ -43,11 +53,13 @@ interface ProgressContextValue {
 const ProgressContext = createContext<ProgressContextValue | null>(null);
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
-    const [progress, setProgress] = useState<SessionProgress>(() =>
-        loadProgress(),
-    );
+    const [progress, setProgress] = useState<SessionProgress>(() => {
+        const loaded = loadProgress();
+        // Assign a case-study theme once per session.
+        return loaded.theme ? loaded : { ...loaded, theme: randomTheme() };
+    });
 
-    // Persist to sessionStorage on every change.
+    // Persist to localStorage on every change.
     useEffect(() => {
         saveProgress(progress);
     }, [progress]);
@@ -104,7 +116,21 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         }));
     }, []);
 
-    const reset = useCallback(() => setProgress(emptyProgress()), []);
+    const setTheme = useCallback((themeId: string) => {
+        setProgress((prev) =>
+            prev.theme === themeId ? prev : { ...prev, theme: themeId },
+        );
+    }, []);
+
+    const setProfile = useCallback((profile: UserProfile) => {
+        setProgress((prev) => ({ ...prev, profile }));
+    }, []);
+
+    // Reset keeps a theme assigned so the app never runs theme-less.
+    const reset = useCallback(
+        () => setProgress({ ...emptyProgress(), theme: randomTheme() }),
+        [],
+    );
 
     const value = useMemo<ProgressContextValue>(
         () => ({
@@ -113,9 +139,20 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
             recordAttempt,
             attemptsFor,
             setCurrent,
+            setTheme,
+            setProfile,
             reset,
         }),
-        [progress, completeSubModule, recordAttempt, attemptsFor, setCurrent, reset],
+        [
+            progress,
+            completeSubModule,
+            recordAttempt,
+            attemptsFor,
+            setCurrent,
+            setTheme,
+            setProfile,
+            reset,
+        ],
     );
 
     return (

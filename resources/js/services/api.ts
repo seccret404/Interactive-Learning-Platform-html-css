@@ -1,4 +1,12 @@
-import type { ModuleSummary, ModuleDetail, QuizResult, QuizAnswer } from '@/types';
+import type {
+    ModuleSummary,
+    ModuleDetail,
+    QuizResult,
+    QuizAnswer,
+    FinalProjectSummary,
+    FinalProjectBrief,
+    FinalProjectResult,
+} from '@/types';
 
 /**
  * Thin REST client for the Laravel API. All endpoints are under /api.
@@ -40,8 +48,12 @@ export async function fetchModules(): Promise<ModuleSummary[]> {
     return res.data ?? [];
 }
 
-export async function fetchModule(id: string): Promise<ModuleDetail> {
-    const res = await request<ApiEnvelope<ModuleDetail>>(`/modules/${id}`);
+export async function fetchModule(
+    id: string,
+    theme?: string | null,
+): Promise<ModuleDetail> {
+    const query = theme ? `?theme=${encodeURIComponent(theme)}` : '';
+    const res = await request<ApiEnvelope<ModuleDetail>>(`/modules/${id}${query}`);
     if (!res.data) throw new Error(res.message ?? 'Module tidak ditemukan.');
     return res.data;
 }
@@ -50,5 +62,27 @@ export async function checkAnswer(payload: QuizAnswer): Promise<QuizResult> {
     return request<QuizResult>('/quiz/run', {
         method: 'POST',
         body: JSON.stringify(payload),
+    });
+}
+
+export async function fetchFinalProjects(): Promise<FinalProjectSummary[]> {
+    const res = await request<ApiEnvelope<FinalProjectSummary[]>>('/final-projects');
+    return res.data ?? [];
+}
+
+export async function fetchFinalProject(id: string): Promise<FinalProjectBrief> {
+    const res = await request<ApiEnvelope<FinalProjectBrief>>(`/final-projects/${id}`);
+    if (!res.data) throw new Error(res.message ?? 'Final Project tidak ditemukan.');
+    return res.data;
+}
+
+export async function submitFinalProject(
+    id: string,
+    html: string,
+    css: string,
+): Promise<FinalProjectResult> {
+    return request<FinalProjectResult>(`/final-projects/${id}/submit`, {
+        method: 'POST',
+        body: JSON.stringify({ html, css }),
     });
 }

@@ -1,0 +1,423 @@
+{
+    "id": "c",
+    "order": 3,
+    "theme": "Tempat Wisata",
+    "title": "Website Tempat Wisata",
+    "narasi": "Wisata Danau Indah ingin memiliki website sederhana agar calon pengunjung dapat melihat informasi tempat wisata, fasilitas yang tersedia, dan harga tiket masuk. Pengelola membutuhkan website yang menarik, mudah dipahami, dan nyaman digunakan. Kamu dipercaya sebagai Web Developer untuk membuatnya menggunakan HTML dan CSS. Kerjakan secara mandiri menggunakan seluruh materi Modul 1–8.",
+    "client_needs": [
+        "Header yang menampilkan nama tempat wisata.",
+        "Navigasi.",
+        "Informasi singkat tentang tempat wisata.",
+        "Gambar tempat wisata.",
+        "Daftar fasilitas.",
+        "Tabel harga tiket.",
+        "Footer."
+    ],
+    "konten": [
+        {
+            "label": "Nama",
+            "value": "Wisata Danau Indah"
+        },
+        {
+            "label": "Navigasi",
+            "items": [
+                "Beranda",
+                "Galeri",
+                "Kontak"
+            ]
+        },
+        {
+            "label": "Deskripsi",
+            "items": [
+                "Wisata Danau Indah menawarkan pemandangan alam yang sejuk dan nyaman untuk dinikmati bersama keluarga.",
+                "Pengunjung dapat menikmati berbagai fasilitas seperti area parkir, toilet, tempat makan, dan spot foto menarik."
+            ]
+        },
+        {
+            "label": "Gambar",
+            "value": "danau.jpg"
+        },
+        {
+            "label": "Teks alternatif gambar",
+            "value": "Pemandangan Wisata Danau Indah"
+        },
+        {
+            "label": "Fasilitas",
+            "items": [
+                "Area Parkir",
+                "Toilet",
+                "Tempat Makan"
+            ]
+        },
+        {
+            "label": "Harga tiket",
+            "table": {
+                "headers": [
+                    "Jenis Tiket",
+                    "Harga"
+                ],
+                "rows": [
+                    [
+                        "Dewasa",
+                        "Rp20.000"
+                    ],
+                    [
+                        "Anak-anak",
+                        "Rp10.000"
+                    ]
+                ]
+            }
+        },
+        {
+            "label": "Footer",
+            "value": "Website Wisata Danau Indah"
+        }
+    ],
+    "html_requirements": [
+        "Struktur dasar HTML.",
+        "<title>.",
+        "Heading.",
+        "Paragraf.",
+        "Gambar dengan src dan alt.",
+        "Hyperlink.",
+        "Daftar.",
+        "Tabel.",
+        "Navigasi.",
+        "Struktur halaman yang jelas."
+    ],
+    "css_requirements": [
+        "External CSS.",
+        "Selector elemen.",
+        "Selector class atau ID.",
+        "Warna teks.",
+        "Warna latar belakang.",
+        "Ukuran atau jenis font.",
+        "Margin.",
+        "Padding.",
+        "Border.",
+        "Flexbox."
+    ],
+    "petunjuk": [
+        "Gunakan seluruh materi HTML dan CSS yang telah kamu pelajari. Pastikan website memenuhi kebutuhan klien dan memiliki struktur yang rapi.",
+        "Kamu bebas menentukan susunan layout, warna, dan gaya tampilan website.",
+        "Periksa kembali kode HTML dan CSS sebelum mengumpulkan proyek."
+    ],
+    "starter_html": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title></title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n\n<body>\n\n    <!-- Buat website tempat wisata di sini -->\n\n</body>\n</html>\n",
+    "starter_css": "/* Tulis CSS website di sini */\n",
+    "criteria": [
+        {
+            "id": "doctype",
+            "label": "Terdapat <!DOCTYPE html>",
+            "aspect": "Struktur HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<!doctype html"
+                }
+            ]
+        },
+        {
+            "id": "title",
+            "label": "Judul halaman (<title>) sudah diisi",
+            "aspect": "Struktur HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "<title>[^<]*[a-z0-9]"
+                }
+            ]
+        },
+        {
+            "id": "header",
+            "label": "Terdapat <header>",
+            "aspect": "Struktur HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<header"
+                }
+            ]
+        },
+        {
+            "id": "nav",
+            "label": "Terdapat navigasi (<nav>)",
+            "aspect": "Struktur HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<nav"
+                }
+            ]
+        },
+        {
+            "id": "footer",
+            "label": "Terdapat <footer>",
+            "aspect": "Struktur HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<footer"
+                }
+            ]
+        },
+        {
+            "id": "heading",
+            "label": "Terdapat heading (<h1>–<h6>)",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "<h[1-6]"
+                }
+            ]
+        },
+        {
+            "id": "paragraphs",
+            "label": "Terdapat minimal dua paragraf",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "count",
+                    "value": "<p",
+                    "min": 2
+                }
+            ]
+        },
+        {
+            "id": "image",
+            "label": "Terdapat gambar dengan src dan alt",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 5,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<img"
+                },
+                {
+                    "type": "contains",
+                    "value": "src="
+                },
+                {
+                    "type": "contains",
+                    "value": "alt="
+                }
+            ]
+        },
+        {
+            "id": "links",
+            "label": "Terdapat minimal tiga hyperlink navigasi",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "count",
+                    "value": "<a",
+                    "min": 3
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "label": "Terdapat daftar (<ul> atau <ol>)",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "<ul|<ol"
+                }
+            ]
+        },
+        {
+            "id": "table",
+            "label": "Terdapat tabel (<table>)",
+            "aspect": "Elemen HTML",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "<table"
+                }
+            ]
+        },
+        {
+            "id": "external_css",
+            "label": "File CSS eksternal (style.css) terhubung",
+            "aspect": "Penerapan CSS",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "stylesheet"
+                },
+                {
+                    "type": "contains",
+                    "value": "style.css"
+                }
+            ]
+        },
+        {
+            "id": "color",
+            "label": "CSS mengatur warna teks (color)",
+            "aspect": "Penerapan CSS",
+            "file": "css",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "(^|[^-a-z])color *:"
+                }
+            ]
+        },
+        {
+            "id": "background",
+            "label": "CSS mengatur warna latar (background)",
+            "aspect": "Penerapan CSS",
+            "file": "css",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "background"
+                }
+            ]
+        },
+        {
+            "id": "font",
+            "label": "CSS mengatur font (font-size / font-family)",
+            "aspect": "Penerapan CSS",
+            "file": "css",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "font-size|font-family|font *:"
+                }
+            ]
+        },
+        {
+            "id": "spacing",
+            "label": "CSS menggunakan margin atau padding",
+            "aspect": "Penerapan CSS",
+            "file": "css",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "margin|padding"
+                }
+            ]
+        },
+        {
+            "id": "border",
+            "label": "CSS menggunakan border",
+            "aspect": "Penerapan CSS",
+            "file": "css",
+            "points": 5,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "border"
+                }
+            ]
+        },
+        {
+            "id": "flex",
+            "label": "CSS menggunakan display: flex",
+            "aspect": "Layout",
+            "file": "css",
+            "points": 10,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "display *: *flex"
+                }
+            ]
+        },
+        {
+            "id": "flex_helper",
+            "label": "Mengatur flex (gap / justify-content / align-items)",
+            "aspect": "Layout",
+            "file": "css",
+            "points": 5,
+            "tests": [
+                {
+                    "type": "regex",
+                    "value": "gap|justify-content|align-items|flex-direction"
+                }
+            ]
+        },
+        {
+            "id": "client_name",
+            "label": "Menampilkan nama: Wisata Danau Indah",
+            "aspect": "Kesesuaian brief",
+            "file": "html",
+            "points": 4,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "wisata danau indah"
+                }
+            ]
+        },
+        {
+            "id": "content_item",
+            "label": "Menampilkan isi fasilitas (mis. Area Parkir)",
+            "aspect": "Kesesuaian brief",
+            "file": "html",
+            "points": 3,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "area parkir"
+                }
+            ]
+        },
+        {
+            "id": "footer_text",
+            "label": "Footer berisi: Website Wisata Danau Indah",
+            "aspect": "Kesesuaian brief",
+            "file": "html",
+            "points": 3,
+            "tests": [
+                {
+                    "type": "contains",
+                    "value": "website wisata danau indah"
+                }
+            ]
+        },
+        {
+            "id": "tidiness",
+            "label": "Kerapian kode (indentasi & keterbacaan)",
+            "aspect": "Kerapian",
+            "file": "tidiness",
+            "points": 5
+        }
+    ],
+    "feedback": {
+        "complete": "🎉 Selamat! Kamu berhasil menyelesaikan Final Project Website Tempat Wisata. Website telah memenuhi kebutuhan klien dan menggunakan HTML serta CSS dengan baik.",
+        "almost": "Website kamu sudah sangat baik! Tinggal sedikit lagi — periksa indikator yang belum tercentang untuk menyempurnakannya.",
+        "css_incomplete": "Struktur website sudah baik. Sekarang periksa kembali penggunaan warna, jarak, border, dan Flexbox agar tampilannya lebih rapi.",
+        "content_incomplete": "Tampilan website sudah mulai menarik, tetapi masih ada informasi tempat wisata yang belum ditampilkan.",
+        "incomplete": "Website masih belum memenuhi kebutuhan klien. Periksa kembali checklist HTML dan CSS sebelum mengumpulkan proyek."
+    }
+}

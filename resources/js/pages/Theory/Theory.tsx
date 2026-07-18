@@ -13,6 +13,7 @@ import { Slide } from '@/components/Slide/Slide';
 import { Loading, ErrorState, EmptyState } from '@/components/common/States';
 import { useModule } from '@/hooks/useModules';
 import { useProgress } from '@/context/ProgressContext';
+import { accentClasses } from '@/utils/accent';
 
 export function Theory() {
     const { moduleId, subModuleId } = useParams<{
@@ -60,6 +61,7 @@ export function Theory() {
 
     const isLast = index === slides.length - 1;
     const isFirst = index === 0;
+    const accent = accentClasses(moduleId ?? 'html');
 
     const startQuiz = () => {
         if (moduleId) setCurrent(moduleId, subId);
@@ -76,13 +78,13 @@ export function Theory() {
             </Link>
 
             <div className="mt-5 flex flex-col rounded-3xl border border-slate-100 bg-white p-7 shadow-sm sm:p-10">
-                <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
                     {subModule.title}
                 </span>
 
                 {/* Re-key on index so the slide entrance animation replays. */}
                 <div className="mt-3 min-h-[220px]" key={index}>
-                    <Slide slide={slides[index]} />
+                    <Slide slide={slides[index]} accentText={accent.text} />
                 </div>
 
                 {/* Slide indicator dots */}
@@ -94,7 +96,7 @@ export function Theory() {
                             onClick={() => setIndex(i)}
                             className={`h-2 rounded-full transition-all duration-300 ${
                                 i === index
-                                    ? 'w-6 bg-brand-600'
+                                    ? `w-6 ${accent.dot}`
                                     : 'w-2 bg-slate-200 hover:bg-slate-300'
                             }`}
                         />

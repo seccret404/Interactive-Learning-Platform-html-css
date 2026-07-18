@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\ModuleService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class ModuleController extends Controller
 {
@@ -23,9 +24,9 @@ class ModuleController extends Controller
     /**
      * GET /api/modules/{id} — full module detail (slides + public quiz fields).
      */
-    public function show(string $id): JsonResponse
+    public function show(Request $request, string $id): JsonResponse
     {
-        $module = $this->modules->detail($id);
+        $module = $this->modules->detail($id, $request->query('theme'));
 
         if ($module === null) {
             return response()->json([

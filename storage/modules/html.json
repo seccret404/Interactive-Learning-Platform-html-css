@@ -67,7 +67,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Bagian yang memberi tahu browser bahwa dokumen menggunakan HTML5 adalah ...",
-                        "options": ["<html>", "<head>", "<body>", "<!DOCTYPE html>"],
+                        "options": [
+                            "<html>",
+                            "<head>",
+                            "<body>",
+                            "<!DOCTYPE html>"
+                        ],
                         "answer": 3,
                         "feedback_correct": "Benar! <!DOCTYPE html> menandakan dokumen HTML5.",
                         "feedback_wrong": "Perhatikan lagi. <!DOCTYPE html> yang menandakan dokumen HTML5."
@@ -76,24 +81,174 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi struktur dasar HTML berikut agar benar.",
                         "template": "<!DOCTYPE html>\n<[[0]]>\n<head>\n    <[[1]]>Profil Sekolah</[[1]]>\n</head>\n<[[2]]>\n</[[2]]>\n</html>",
-                        "blanks": [["html"], ["title"], ["body"]],
+                        "blanks": [
+                            [
+                                "html"
+                            ],
+                            [
+                                "title"
+                            ],
+                            [
+                                "body"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Struktur dasar HTML kamu sudah benar.",
                         "feedback_wrong": "Ingat urutannya: <html> membungkus semua, <title> di dalam head, <body> untuk isi."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Buat struktur HTML dasar untuk halaman Profil Sekolah.\n\n• Judul tab browser (title): Profil Sekolah\n• Isi halaman (body): Selamat Datang di Website Sekolah",
-                        "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
-                        "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<title", "message": "Harus ada tag <title>." },
-                            { "type": "contains", "value": "profil sekolah", "message": "Judul harus berisi 'Profil Sekolah'." },
-                            { "type": "contains", "value": "<body", "message": "Harus ada tag <body>." },
-                            { "type": "contains", "value": "selamat datang di website sekolah", "message": "Isi body harus 'Selamat Datang di Website Sekolah'." }
-                        ],
-                        "feedback_correct": "Hebat! Struktur HTML kamu sudah benar.",
-                        "feedback_wrong": "Masih ada yang kurang. Periksa kembali bagian <title> dan <body>."
+                        "variants": {
+                            "a": {
+                                "study_case": "Buat struktur HTML dasar untuk halaman Profil Sekolah.\n\n• Judul tab browser (title): Profil Sekolah\n• Isi halaman (body): Selamat Datang di Website Sekolah",
+                                "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                                "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "profil sekolah",
+                                        "message": "Judul harus berisi 'Profil Sekolah'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<body",
+                                        "message": "Harus ada tag <body>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "selamat datang di website sekolah",
+                                        "message": "Isi body harus 'Selamat Datang di Website Sekolah'."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Buat struktur HTML dasar untuk halaman Toko Buku Cerdas.\n\n• Judul tab browser (title): Toko Buku Cerdas\n• Isi halaman (body): Selamat Datang di Toko Buku Cerdas",
+                                "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                                "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "toko buku cerdas",
+                                        "message": "Judul harus berisi 'Toko Buku Cerdas'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<body",
+                                        "message": "Harus ada tag <body>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "selamat datang di toko buku cerdas",
+                                        "message": "Isi body harus 'Selamat Datang di Toko Buku Cerdas'."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Buat struktur HTML dasar untuk halaman Wisata Nusantara.\n\n• Judul tab browser (title): Wisata Nusantara\n• Isi halaman (body): Selamat Datang di Wisata Nusantara",
+                                "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                                "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "wisata nusantara",
+                                        "message": "Judul harus berisi 'Wisata Nusantara'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<body",
+                                        "message": "Harus ada tag <body>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "selamat datang di wisata nusantara",
+                                        "message": "Isi body harus 'Selamat Datang di Wisata Nusantara'."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Buat struktur HTML dasar untuk halaman Restoran Lezat.\n\n• Judul tab browser (title): Restoran Lezat\n• Isi halaman (body): Selamat Datang di Restoran Lezat",
+                                "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                                "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "restoran lezat",
+                                        "message": "Judul harus berisi 'Restoran Lezat'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<body",
+                                        "message": "Harus ada tag <body>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "selamat datang di restoran lezat",
+                                        "message": "Isi body harus 'Selamat Datang di Restoran Lezat'."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Buat struktur HTML dasar untuk halaman OSIS Kreatif.\n\n• Judul tab browser (title): OSIS Kreatif\n• Isi halaman (body): Selamat Datang di Website OSIS",
+                                "hint": "Gunakan <title> di dalam <head>, lalu tulis teks di dalam <body>.",
+                                "starter_code": "<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n</body>\n</html>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "osis kreatif",
+                                        "message": "Judul harus berisi 'OSIS Kreatif'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<body",
+                                        "message": "Harus ada tag <body>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "selamat datang di website osis",
+                                        "message": "Isi body harus 'Selamat Datang di Website OSIS'."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -146,7 +301,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Tag yang digunakan untuk membuat paragraf adalah ...",
-                        "options": ["<h1>", "<img>", "<p>", "<table>"],
+                        "options": [
+                            "<h1>",
+                            "<img>",
+                            "<p>",
+                            "<table>"
+                        ],
                         "answer": 2,
                         "feedback_correct": "Benar! Paragraf menggunakan tag <p>.",
                         "feedback_wrong": "Ingat, paragraf ditulis dengan tag <p>."
@@ -154,7 +314,12 @@
                     {
                         "type": "identify",
                         "prompt": "Perhatikan kode: <p title=\"Profil Sekolah\">SMK Harapan Bangsa</p>. Klik bagian yang merupakan atribut HTML.",
-                        "code_parts": ["<p", "title=\"Profil Sekolah\"", "SMK Harapan Bangsa", "</p>"],
+                        "code_parts": [
+                            "<p",
+                            "title=\"Profil Sekolah\"",
+                            "SMK Harapan Bangsa",
+                            "</p>"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! Atribut adalah informasi tambahan pada tag pembuka.",
                         "feedback_wrong": "Atribut selalu berada pada tag pembuka, bentuknya namaAtribut=\"nilai\"."
@@ -163,23 +328,148 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi kode berikut agar menjadi heading utama.",
                         "template": "<[[0]]>Profil Sekolah</[[0]]>",
-                        "blanks": [["h1"]],
+                        "blanks": [
+                            [
+                                "h1"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Kamu menggunakan tag heading dengan benar.",
                         "feedback_wrong": "Heading utama menggunakan tag <h1>."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Buat halaman profil sekolah dengan ketentuan:\n\n• Judul utama (h1): SMK Harapan Bangsa\n• Dua paragraf (p) berisi penjelasan tentang sekolah tersebut.",
-                        "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
-                        "starter_code": "<body>\n\n</body>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<h1", "message": "Harus ada judul utama <h1>." },
-                            { "type": "contains", "value": "smk harapan bangsa", "message": "Judul harus berisi 'SMK Harapan Bangsa'." },
-                            { "type": "count", "value": "<p", "min": 2, "message": "Harus ada minimal dua paragraf (<p>)." }
-                        ],
-                        "feedback_correct": "Bagus! Heading dan paragraf sudah tepat.",
-                        "feedback_wrong": "Periksa lagi: perlu satu <h1> dan dua <p>."
+                        "variants": {
+                            "a": {
+                                "study_case": "Buat halaman untuk SMK Harapan Bangsa:\n\n• Judul utama (h1): SMK Harapan Bangsa\n• Dua paragraf (p) berisi penjelasan singkat tentang SMK Harapan Bangsa.",
+                                "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                                "starter_code": "<body>\n\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Harus ada judul utama <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "smk harapan bangsa",
+                                        "message": "Judul harus berisi 'SMK Harapan Bangsa'."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<p",
+                                        "message": "Harus ada minimal dua paragraf (<p>).",
+                                        "min": 2
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Buat halaman untuk Toko Buku Cerdas:\n\n• Judul utama (h1): Toko Buku Cerdas\n• Dua paragraf (p) berisi penjelasan singkat tentang Toko Buku Cerdas.",
+                                "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                                "starter_code": "<body>\n\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Harus ada judul utama <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "toko buku cerdas",
+                                        "message": "Judul harus berisi 'Toko Buku Cerdas'."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<p",
+                                        "message": "Harus ada minimal dua paragraf (<p>).",
+                                        "min": 2
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Buat halaman untuk Wisata Danau Indah:\n\n• Judul utama (h1): Wisata Danau Indah\n• Dua paragraf (p) berisi penjelasan singkat tentang Wisata Danau Indah.",
+                                "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                                "starter_code": "<body>\n\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Harus ada judul utama <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "wisata danau indah",
+                                        "message": "Judul harus berisi 'Wisata Danau Indah'."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<p",
+                                        "message": "Harus ada minimal dua paragraf (<p>).",
+                                        "min": 2
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Buat halaman untuk Restoran Selera Nusantara:\n\n• Judul utama (h1): Restoran Selera Nusantara\n• Dua paragraf (p) berisi penjelasan singkat tentang Restoran Selera Nusantara.",
+                                "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                                "starter_code": "<body>\n\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Harus ada judul utama <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "restoran selera nusantara",
+                                        "message": "Judul harus berisi 'Restoran Selera Nusantara'."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<p",
+                                        "message": "Harus ada minimal dua paragraf (<p>).",
+                                        "min": 2
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Buat halaman untuk OSIS Kreatif:\n\n• Judul utama (h1): OSIS Kreatif\n• Dua paragraf (p) berisi penjelasan singkat tentang OSIS Kreatif.",
+                                "hint": "Gunakan satu <h1> untuk judul, lalu dua tag <p> untuk paragraf.",
+                                "starter_code": "<body>\n\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Harus ada judul utama <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "osis kreatif",
+                                        "message": "Judul harus berisi 'OSIS Kreatif'."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<p",
+                                        "message": "Harus ada minimal dua paragraf (<p>).",
+                                        "min": 2
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -258,7 +548,12 @@
                     {
                         "type": "identify",
                         "prompt": "Klik bagian kode yang menunjukkan teks alternatif gambar.",
-                        "code_parts": ["<img", "src=\"images/sekolah.jpg\"", "alt=\"Gedung Sekolah\"", ">"],
+                        "code_parts": [
+                            "<img",
+                            "src=\"images/sekolah.jpg\"",
+                            "alt=\"Gedung Sekolah\"",
+                            ">"
+                        ],
                         "answer": 2,
                         "feedback_correct": "Benar! Atribut alt berisi teks alternatif gambar.",
                         "feedback_wrong": "Teks alternatif gambar ditulis pada atribut alt."
@@ -267,27 +562,244 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi kode berikut agar menjadi hyperlink menuju halaman profil.html.",
                         "template": "<a [[0]]>Profil Sekolah</a>",
-                        "blanks": [["href=\"profil.html\"", "href='profil.html'"]],
+                        "blanks": [
+                            [
+                                "href=\"profil.html\"",
+                                "href='profil.html'"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Hyperlink berhasil dibuat menggunakan atribut href.",
                         "feedback_wrong": "Hyperlink menggunakan atribut href untuk menentukan halaman tujuan, contoh: href=\"profil.html\"."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Buat bagian halaman profil sekolah yang berisi:\n\n• Gambar sekolah.jpg dengan teks alternatif 'Gedung sekolah'\n• Hyperlink menuju profil.html dengan teks 'Lihat Profil Sekolah'",
-                        "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
-                        "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<img", "message": "Harus ada tag <img>." },
-                            { "type": "contains", "value": "src=", "message": "Gambar harus memiliki atribut src." },
-                            { "type": "contains", "value": "sekolah.jpg", "message": "Gambar harus mengarah ke sekolah.jpg." },
-                            { "type": "contains", "value": "alt=", "message": "Gambar harus memiliki atribut alt." },
-                            { "type": "contains", "value": "<a", "message": "Harus ada hyperlink <a>." },
-                            { "type": "contains", "value": "href=", "message": "Hyperlink harus memiliki atribut href." },
-                            { "type": "contains", "value": "profil.html", "message": "Hyperlink harus menuju profil.html." }
-                        ],
-                        "feedback_correct": "Bagus! Gambar dan hyperlink sudah benar.",
-                        "feedback_wrong": "Periksa kembali atribut src, alt, dan href."
+                        "variants": {
+                            "a": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Gambar sekolah.jpg dengan teks alternatif 'Gedung sekolah'\n• Hyperlink menuju profil.html dengan teks 'Lihat Profil Sekolah'",
+                                "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                                "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<img",
+                                        "message": "Harus ada tag <img>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "src=",
+                                        "message": "Gambar harus memiliki atribut src."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "sekolah.jpg",
+                                        "message": "Gambar harus mengarah ke sekolah.jpg."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "alt=",
+                                        "message": "Gambar harus memiliki atribut alt."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<a",
+                                        "message": "Harus ada hyperlink <a>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Hyperlink harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "profil.html",
+                                        "message": "Hyperlink harus menuju profil.html."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Gambar toko-buku.jpg dengan teks alternatif 'Toko buku'\n• Hyperlink menuju katalog.html dengan teks 'Lihat Katalog Buku'",
+                                "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                                "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<img",
+                                        "message": "Harus ada tag <img>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "src=",
+                                        "message": "Gambar harus memiliki atribut src."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "toko-buku.jpg",
+                                        "message": "Gambar harus mengarah ke toko-buku.jpg."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "alt=",
+                                        "message": "Gambar harus memiliki atribut alt."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<a",
+                                        "message": "Harus ada hyperlink <a>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Hyperlink harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "katalog.html",
+                                        "message": "Hyperlink harus menuju katalog.html."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Gambar danau.jpg dengan teks alternatif 'Pemandangan danau'\n• Hyperlink menuju galeri.html dengan teks 'Lihat Galeri Wisata'",
+                                "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                                "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<img",
+                                        "message": "Harus ada tag <img>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "src=",
+                                        "message": "Gambar harus memiliki atribut src."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "danau.jpg",
+                                        "message": "Gambar harus mengarah ke danau.jpg."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "alt=",
+                                        "message": "Gambar harus memiliki atribut alt."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<a",
+                                        "message": "Harus ada hyperlink <a>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Hyperlink harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "galeri.html",
+                                        "message": "Hyperlink harus menuju galeri.html."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Gambar restoran.jpg dengan teks alternatif 'Suasana restoran'\n• Hyperlink menuju menu.html dengan teks 'Lihat Menu Restoran'",
+                                "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                                "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<img",
+                                        "message": "Harus ada tag <img>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "src=",
+                                        "message": "Gambar harus memiliki atribut src."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "restoran.jpg",
+                                        "message": "Gambar harus mengarah ke restoran.jpg."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "alt=",
+                                        "message": "Gambar harus memiliki atribut alt."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<a",
+                                        "message": "Harus ada hyperlink <a>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Hyperlink harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "menu.html",
+                                        "message": "Hyperlink harus menuju menu.html."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Gambar osis.jpg dengan teks alternatif 'Kegiatan OSIS'\n• Hyperlink menuju kegiatan.html dengan teks 'Lihat Kegiatan OSIS'",
+                                "hint": "Gunakan <img src=\"...\" alt=\"...\"> untuk gambar dan <a href=\"...\">...</a> untuk link.",
+                                "starter_code": "<body>\n    <!-- Tambahkan gambar dan hyperlink di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<img",
+                                        "message": "Harus ada tag <img>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "src=",
+                                        "message": "Gambar harus memiliki atribut src."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "osis.jpg",
+                                        "message": "Gambar harus mengarah ke osis.jpg."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "alt=",
+                                        "message": "Gambar harus memiliki atribut alt."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<a",
+                                        "message": "Harus ada hyperlink <a>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Hyperlink harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "kegiatan.html",
+                                        "message": "Hyperlink harus menuju kegiatan.html."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -340,7 +852,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Sebuah website ingin menampilkan langkah-langkah membuat akun dari langkah pertama sampai terakhir. Jenis daftar yang tepat adalah ...",
-                        "options": ["<ul>", "<table>", "<ol>", "<li>"],
+                        "options": [
+                            "<ul>",
+                            "<table>",
+                            "<ol>",
+                            "<li>"
+                        ],
                         "answer": 2,
                         "feedback_correct": "Tepat! Daftar berurutan (<ol>) dipakai ketika urutan penting.",
                         "feedback_wrong": "Untuk urutan langkah, gunakan daftar berurutan <ol>."
@@ -361,7 +878,12 @@
                     {
                         "type": "identify",
                         "prompt": "Klik bagian kode yang merupakan judul kolom tabel.",
-                        "code_parts": ["<table>", "<tr>", "<th>Nama</th>", "<td>Andi</td>"],
+                        "code_parts": [
+                            "<table>",
+                            "<tr>",
+                            "<th>Nama</th>",
+                            "<td>Andi</td>"
+                        ],
                         "answer": 2,
                         "feedback_correct": "Benar! Tag <th> digunakan untuk judul kolom pada tabel.",
                         "feedback_wrong": "Judul kolom menggunakan tag <th>."
@@ -370,27 +892,253 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi kode berikut agar menjadi daftar tidak berurutan yang benar.",
                         "template": "<[[0]]>\n    <li>HTML</li>\n    <li>CSS</li>\n</[[0]]>",
-                        "blanks": [["ul"]],
+                        "blanks": [
+                            [
+                                "ul"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Kamu membuat daftar tidak berurutan dengan <ul>.",
                         "feedback_wrong": "Daftar tidak berurutan menggunakan tag <ul>."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Buat bagian halaman profil sekolah yang berisi:\n\n• Daftar program keahlian (ul) dengan item: RPL, TKJ, DKV\n• Tabel data siswa dengan judul kolom Nama dan Kelas, serta satu baris data: Andi | XI RPL",
-                        "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
-                        "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<ul", "message": "Harus ada daftar <ul>." },
-                            { "type": "count", "value": "<li", "min": 3, "message": "Daftar harus punya minimal tiga <li>." },
-                            { "type": "contains", "value": "rpl", "message": "Daftar harus memuat 'RPL'." },
-                            { "type": "contains", "value": "<table", "message": "Harus ada tabel <table>." },
-                            { "type": "count", "value": "<tr", "min": 2, "message": "Tabel harus punya minimal dua baris <tr>." },
-                            { "type": "contains", "value": "<th", "message": "Tabel harus punya judul kolom <th>." },
-                            { "type": "contains", "value": "<td", "message": "Tabel harus punya isi data <td>." }
-                        ],
-                        "feedback_correct": "Keren! Kamu berhasil menggabungkan daftar dan tabel.",
-                        "feedback_wrong": "Periksa kembali struktur <ul>/<li> dan <table>/<tr>/<th>/<td>."
+                        "variants": {
+                            "a": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Daftar (ul) dengan item: RPL, TKJ, DKV\n• Tabel dengan judul kolom Nama dan Kelas, serta satu baris data: Andi | XI RPL",
+                                "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                                "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "rpl",
+                                        "message": "Daftar harus memuat 'RPL'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<table",
+                                        "message": "Harus ada tabel <table>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<tr",
+                                        "message": "Tabel harus punya minimal dua baris <tr>.",
+                                        "min": 2
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<th",
+                                        "message": "Tabel harus punya judul kolom <th>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<td",
+                                        "message": "Tabel harus punya isi data <td>."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Daftar (ul) dengan item: Buku Pelajaran, Novel, Komik\n• Tabel dengan judul kolom Judul Buku dan Harga, serta satu baris data: Belajar HTML | Rp50.000",
+                                "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                                "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "buku pelajaran",
+                                        "message": "Daftar harus memuat 'Buku Pelajaran'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<table",
+                                        "message": "Harus ada tabel <table>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<tr",
+                                        "message": "Tabel harus punya minimal dua baris <tr>.",
+                                        "min": 2
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<th",
+                                        "message": "Tabel harus punya judul kolom <th>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<td",
+                                        "message": "Tabel harus punya isi data <td>."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Daftar (ul) dengan item: Area Parkir, Toilet, Tempat Makan\n• Tabel dengan judul kolom Tiket dan Harga, serta satu baris data: Dewasa | Rp20.000",
+                                "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                                "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "area parkir",
+                                        "message": "Daftar harus memuat 'Area Parkir'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<table",
+                                        "message": "Harus ada tabel <table>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<tr",
+                                        "message": "Tabel harus punya minimal dua baris <tr>.",
+                                        "min": 2
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<th",
+                                        "message": "Tabel harus punya judul kolom <th>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<td",
+                                        "message": "Tabel harus punya isi data <td>."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Daftar (ul) dengan item: Nasi Goreng, Mie Ayam, Es Teh\n• Tabel dengan judul kolom Menu dan Harga, serta satu baris data: Nasi Goreng | Rp18.000",
+                                "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                                "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "nasi goreng",
+                                        "message": "Daftar harus memuat 'Nasi Goreng'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<table",
+                                        "message": "Harus ada tabel <table>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<tr",
+                                        "message": "Tabel harus punya minimal dua baris <tr>.",
+                                        "min": 2
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<th",
+                                        "message": "Tabel harus punya judul kolom <th>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<td",
+                                        "message": "Tabel harus punya isi data <td>."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Buat bagian halaman yang berisi:\n\n• Daftar (ul) dengan item: Rapat Mingguan, Bakti Sosial, Lomba Sekolah\n• Tabel dengan judul kolom Nama Kegiatan dan Waktu, serta satu baris data: Rapat Mingguan | Senin",
+                                "hint": "Gunakan <ul> dengan tiga <li>, lalu <table> dengan <tr>, <th>, dan <td>.",
+                                "starter_code": "<body>\n    <!-- Buat daftar dan tabel di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "rapat mingguan",
+                                        "message": "Daftar harus memuat 'Rapat Mingguan'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<table",
+                                        "message": "Harus ada tabel <table>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<tr",
+                                        "message": "Tabel harus punya minimal dua baris <tr>.",
+                                        "min": 2
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<th",
+                                        "message": "Tabel harus punya judul kolom <th>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<td",
+                                        "message": "Tabel harus punya isi data <td>."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }

@@ -4,7 +4,9 @@
     "icon": "paint-brush",
     "order": 2,
     "description": "Belajar CSS untuk mempercantik dan menata halaman web: penerapan CSS, selector, tampilan, hingga layout dan final project.",
-    "requires": ["html"],
+    "requires": [
+        "html"
+    ],
     "subModules": [
         {
             "id": 1,
@@ -80,7 +82,12 @@
                     {
                         "type": "identify",
                         "prompt": "Klik bagian kode yang menunjukkan lokasi file CSS.",
-                        "code_parts": ["<link", "rel=\"stylesheet\"", "href=\"css/style.css\"", ">"],
+                        "code_parts": [
+                            "<link",
+                            "rel=\"stylesheet\"",
+                            "href=\"css/style.css\"",
+                            ">"
+                        ],
                         "answer": 2,
                         "feedback_correct": "Benar! Atribut href menunjukkan nama dan lokasi file CSS.",
                         "feedback_wrong": "Lokasi file CSS ditunjukkan oleh atribut href."
@@ -89,26 +96,219 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi kode berikut agar menghubungkan file style.css.",
                         "template": "<head>\n    <link rel=\"stylesheet\" [[0]]>\n</head>",
-                        "blanks": [["href=\"style.css\"", "href='style.css'"]],
+                        "blanks": [
+                            [
+                                "href=\"style.css\"",
+                                "href='style.css'"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! File CSS berhasil dihubungkan dengan href.",
                         "feedback_wrong": "Gunakan atribut href untuk menunjuk file, contoh: href=\"style.css\"."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Lengkapi bagian <head> halaman Profil Sekolah:\n\n• Judul tab browser (title): Profil Sekolah\n• Hubungkan file CSS eksternal bernama style.css",
-                        "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
-                        "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<title", "message": "Harus ada tag <title>." },
-                            { "type": "contains", "value": "profil sekolah", "message": "Judul harus 'Profil Sekolah'." },
-                            { "type": "contains", "value": "<link", "message": "Harus ada tag <link>." },
-                            { "type": "contains", "value": "stylesheet", "message": "Tag <link> harus memiliki rel=\"stylesheet\"." },
-                            { "type": "contains", "value": "href=", "message": "Tag <link> harus memiliki atribut href." },
-                            { "type": "contains", "value": "style.css", "message": "Harus menghubungkan file style.css." }
-                        ],
-                        "feedback_correct": "Bagus! Halaman sudah terhubung ke CSS eksternal.",
-                        "feedback_wrong": "Periksa kembali <title> dan tag <link rel=\"stylesheet\" href=\"style.css\">."
+                        "variants": {
+                            "a": {
+                                "study_case": "Lengkapi bagian <head> halaman Profil Sekolah:\n\n• Judul tab browser (title): Profil Sekolah\n• Hubungkan file CSS eksternal bernama style.css",
+                                "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                                "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "profil sekolah",
+                                        "message": "Judul harus 'Profil Sekolah'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<link",
+                                        "message": "Harus ada tag <link>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "stylesheet",
+                                        "message": "Tag <link> harus memiliki rel=\"stylesheet\"."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Tag <link> harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "style.css",
+                                        "message": "Harus menghubungkan file style.css."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Lengkapi bagian <head> halaman Toko Buku:\n\n• Judul tab browser (title): Toko Buku\n• Hubungkan file CSS eksternal bernama style.css",
+                                "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                                "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "toko buku",
+                                        "message": "Judul harus 'Toko Buku'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<link",
+                                        "message": "Harus ada tag <link>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "stylesheet",
+                                        "message": "Tag <link> harus memiliki rel=\"stylesheet\"."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Tag <link> harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "style.css",
+                                        "message": "Harus menghubungkan file style.css."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Lengkapi bagian <head> halaman Tempat Wisata:\n\n• Judul tab browser (title): Tempat Wisata\n• Hubungkan file CSS eksternal bernama style.css",
+                                "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                                "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "tempat wisata",
+                                        "message": "Judul harus 'Tempat Wisata'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<link",
+                                        "message": "Harus ada tag <link>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "stylesheet",
+                                        "message": "Tag <link> harus memiliki rel=\"stylesheet\"."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Tag <link> harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "style.css",
+                                        "message": "Harus menghubungkan file style.css."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Lengkapi bagian <head> halaman Restoran:\n\n• Judul tab browser (title): Restoran\n• Hubungkan file CSS eksternal bernama style.css",
+                                "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                                "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "restoran",
+                                        "message": "Judul harus 'Restoran'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<link",
+                                        "message": "Harus ada tag <link>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "stylesheet",
+                                        "message": "Tag <link> harus memiliki rel=\"stylesheet\"."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Tag <link> harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "style.css",
+                                        "message": "Harus menghubungkan file style.css."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Lengkapi bagian <head> halaman OSIS:\n\n• Judul tab browser (title): OSIS\n• Hubungkan file CSS eksternal bernama style.css",
+                                "hint": "Isi <title> lalu tambahkan <link rel=\"stylesheet\" href=\"style.css\">.",
+                                "starter_code": "<head>\n    <title></title>\n    <!-- Hubungkan file CSS di sini -->\n</head>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<title",
+                                        "message": "Harus ada tag <title>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "osis",
+                                        "message": "Judul harus 'OSIS'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<link",
+                                        "message": "Harus ada tag <link>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "stylesheet",
+                                        "message": "Tag <link> harus memiliki rel=\"stylesheet\"."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "href=",
+                                        "message": "Tag <link> harus memiliki atribut href."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "style.css",
+                                        "message": "Harus menghubungkan file style.css."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -148,7 +348,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Perhatikan: <h1>Belajar HTML</h1> dan <p>Belajar CSS</p>. Agar hanya judul berubah menjadi biru, selector yang tepat adalah ...",
-                        "options": ["p", "h1", "body", "*"],
+                        "options": [
+                            "p",
+                            "h1",
+                            "body",
+                            "*"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! Selector h1 hanya memilih elemen heading.",
                         "feedback_wrong": "Untuk memilih judul, gunakan element selector h1."
@@ -156,7 +361,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Perhatikan: <p class=\"info\">Profil Sekolah</p> dan <p>Kontak</p>. Agar hanya paragraf pertama berubah warna, selector yang tepat adalah ...",
-                        "options": ["p", ".info", "#info", "body"],
+                        "options": [
+                            "p",
+                            ".info",
+                            "#info",
+                            "body"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! Class selector .info hanya memilih elemen ber-class info.",
                         "feedback_wrong": "Gunakan class selector .info (diawali titik) untuk memilih paragraf ber-class info."
@@ -164,7 +374,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Perhatikan: <h1 id=\"judulUtama\">Belajar HTML</h1>. Selector yang benar untuk elemen tersebut adalah ...",
-                        "options": [".judulUtama", "#judulUtama", "h1id", "judulUtama"],
+                        "options": [
+                            ".judulUtama",
+                            "#judulUtama",
+                            "h1id",
+                            "judulUtama"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! ID selector diawali tanda pagar: #judulUtama.",
                         "feedback_wrong": "ID selector diawali tanda pagar ( # ), jadi #judulUtama."
@@ -172,7 +387,12 @@
                     {
                         "type": "identify",
                         "prompt": "Klik bagian kode yang merupakan Class Selector.",
-                        "code_parts": ["h1", ".menu", "#header", "{"],
+                        "code_parts": [
+                            "h1",
+                            ".menu",
+                            "#header",
+                            "{"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! Class selector diawali tanda titik ( . ).",
                         "feedback_wrong": "Class selector selalu diawali tanda titik, contohnya .menu."
@@ -181,27 +401,243 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi CSS berikut agar memilih elemen yang memiliki class menu.",
                         "template": "[[0]] {\n    color: blue;\n}",
-                        "blanks": [[".menu"]],
+                        "blanks": [
+                            [
+                                ".menu"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Kamu memilih class dengan benar menggunakan .menu.",
                         "feedback_wrong": "Class selector diawali titik, jadi tulis .menu."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Tulis aturan CSS untuk halaman profil sekolah:\n\n• Elemen h1 diberi warna biru (blue)\n• Paragraf dengan class \"deskripsi\" diberi warna abu-abu (gray)\n• Bagian dengan id \"utama\" diberi background putih (white)",
-                        "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
-                        "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
-                        "language": "css",
-                        "test_cases": [
-                            { "type": "contains", "value": "h1", "message": "Harus ada selector h1." },
-                            { "type": "contains", "value": "blue", "message": "h1 harus berwarna blue." },
-                            { "type": "contains", "value": ".deskripsi", "message": "Harus ada class selector .deskripsi." },
-                            { "type": "contains", "value": "gray", "message": ".deskripsi harus berwarna gray." },
-                            { "type": "contains", "value": "#utama", "message": "Harus ada id selector #utama." },
-                            { "type": "contains", "value": "background", "message": "#utama harus memiliki background." },
-                            { "type": "contains", "value": "white", "message": "background #utama harus white." }
-                        ],
-                        "feedback_correct": "Keren! Element, class, dan id selector sudah tepat.",
-                        "feedback_wrong": "Periksa kembali penggunaan h1, .deskripsi, dan #utama."
+                        "variants": {
+                            "a": {
+                                "study_case": "Tulis aturan CSS:\n\n• Elemen h1 diberi warna blue\n• Paragraf dengan class \"deskripsi\" diberi warna gray\n• Bagian dengan id \"utama\" diberi background white",
+                                "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                                "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "h1",
+                                        "message": "Harus ada selector h1."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "blue",
+                                        "message": "h1 harus berwarna blue."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".deskripsi",
+                                        "message": "Harus ada class selector .deskripsi."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "gray",
+                                        "message": ".deskripsi harus berwarna gray."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "#utama",
+                                        "message": "Harus ada id selector #utama."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "#utama harus memiliki background."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "white",
+                                        "message": "background #utama harus white."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Tulis aturan CSS:\n\n• Elemen h1 diberi warna brown\n• Paragraf dengan class \"deskripsi\" diberi warna black\n• Bagian dengan id \"utama\" diberi background beige",
+                                "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                                "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "h1",
+                                        "message": "Harus ada selector h1."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "brown",
+                                        "message": "h1 harus berwarna brown."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".deskripsi",
+                                        "message": "Harus ada class selector .deskripsi."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "black",
+                                        "message": ".deskripsi harus berwarna black."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "#utama",
+                                        "message": "Harus ada id selector #utama."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "#utama harus memiliki background."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beige",
+                                        "message": "background #utama harus beige."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Tulis aturan CSS:\n\n• Elemen h1 diberi warna green\n• Paragraf dengan class \"deskripsi\" diberi warna gray\n• Bagian dengan id \"utama\" diberi background lightblue",
+                                "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                                "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "h1",
+                                        "message": "Harus ada selector h1."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "green",
+                                        "message": "h1 harus berwarna green."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".deskripsi",
+                                        "message": "Harus ada class selector .deskripsi."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "gray",
+                                        "message": ".deskripsi harus berwarna gray."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "#utama",
+                                        "message": "Harus ada id selector #utama."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "#utama harus memiliki background."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lightblue",
+                                        "message": "background #utama harus lightblue."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Tulis aturan CSS:\n\n• Elemen h1 diberi warna red\n• Paragraf dengan class \"deskripsi\" diberi warna black\n• Bagian dengan id \"utama\" diberi background lightyellow",
+                                "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                                "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "h1",
+                                        "message": "Harus ada selector h1."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "red",
+                                        "message": "h1 harus berwarna red."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".deskripsi",
+                                        "message": "Harus ada class selector .deskripsi."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "black",
+                                        "message": ".deskripsi harus berwarna black."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "#utama",
+                                        "message": "Harus ada id selector #utama."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "#utama harus memiliki background."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lightyellow",
+                                        "message": "background #utama harus lightyellow."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Tulis aturan CSS:\n\n• Elemen h1 diberi warna purple\n• Paragraf dengan class \"deskripsi\" diberi warna gray\n• Bagian dengan id \"utama\" diberi background white",
+                                "hint": "Gunakan h1 untuk element, .deskripsi untuk class, dan #utama untuk id.",
+                                "starter_code": "h1 {\n\n}\n.deskripsi {\n\n}\n#utama {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "h1",
+                                        "message": "Harus ada selector h1."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "purple",
+                                        "message": "h1 harus berwarna purple."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".deskripsi",
+                                        "message": "Harus ada class selector .deskripsi."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "gray",
+                                        "message": ".deskripsi harus berwarna gray."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "#utama",
+                                        "message": "Harus ada id selector #utama."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "#utama harus memiliki background."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "white",
+                                        "message": "background #utama harus white."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -298,28 +734,271 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi kode berikut agar ukuran teks heading menjadi 32 piksel.",
                         "template": "h1 {\n    color: darkblue;\n    [[0]]\n}",
-                        "blanks": [["font-size: 32px;", "font-size:32px;", "font-size: 32px", "font-size:32px"]],
+                        "blanks": [
+                            [
+                                "font-size: 32px;",
+                                "font-size:32px;",
+                                "font-size: 32px",
+                                "font-size:32px"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! font-size dengan value 32px mengatur ukuran teks.",
                         "feedback_wrong": "Gunakan property font-size, tanda titik dua, dan satuan px: font-size: 32px;"
                     },
                     {
                         "type": "editor",
-                        "study_case": "Tulis CSS untuk kartu profil sekolah:\n\n• body: background-color lightgray\n• h1: warna blue, ukuran 32px\n• .card: padding 20px, border 1px solid black",
-                        "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
-                        "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
-                        "language": "css",
-                        "test_cases": [
-                            { "type": "contains", "value": "background", "message": "body harus punya background-color." },
-                            { "type": "contains", "value": "lightgray", "message": "background body harus lightgray." },
-                            { "type": "contains", "value": "blue", "message": "h1 harus berwarna blue." },
-                            { "type": "contains", "value": "32px", "message": "Ukuran h1 harus 32px." },
-                            { "type": "contains", "value": ".card", "message": "Harus ada selector .card." },
-                            { "type": "contains", "value": "padding", "message": ".card harus memiliki padding." },
-                            { "type": "contains", "value": "border", "message": ".card harus memiliki border." },
-                            { "type": "contains", "value": "solid", "message": "Border .card gunakan jenis solid." }
-                        ],
-                        "feedback_correct": "Mantap! Tampilan kartu sudah rapi.",
-                        "feedback_wrong": "Periksa kembali background, warna, ukuran, padding, dan border."
+                        "variants": {
+                            "a": {
+                                "study_case": "Tulis CSS untuk kartu profil:\n\n• body: background-color lightgray\n• h1: warna blue, ukuran 32px\n• .card: padding 20px, border 1px solid black",
+                                "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                                "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "body harus punya background-color."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lightgray",
+                                        "message": "background body harus lightgray."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "blue",
+                                        "message": "h1 harus berwarna blue."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "32px",
+                                        "message": "Ukuran h1 harus 32px."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".card",
+                                        "message": "Harus ada selector .card."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "padding",
+                                        "message": ".card harus memiliki padding."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "border",
+                                        "message": ".card harus memiliki border."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "solid",
+                                        "message": "Border .card gunakan jenis solid."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Tulis CSS untuk kartu profil:\n\n• body: background-color beige\n• h1: warna brown, ukuran 30px\n• .card: padding 20px, border 1px solid brown",
+                                "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                                "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "body harus punya background-color."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beige",
+                                        "message": "background body harus beige."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "brown",
+                                        "message": "h1 harus berwarna brown."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "30px",
+                                        "message": "Ukuran h1 harus 30px."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".card",
+                                        "message": "Harus ada selector .card."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "padding",
+                                        "message": ".card harus memiliki padding."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "border",
+                                        "message": ".card harus memiliki border."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "solid",
+                                        "message": "Border .card gunakan jenis solid."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Tulis CSS untuk kartu profil:\n\n• body: background-color lightblue\n• h1: warna green, ukuran 32px\n• .card: padding 20px, border 1px solid green",
+                                "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                                "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "body harus punya background-color."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lightblue",
+                                        "message": "background body harus lightblue."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "green",
+                                        "message": "h1 harus berwarna green."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "32px",
+                                        "message": "Ukuran h1 harus 32px."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".card",
+                                        "message": "Harus ada selector .card."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "padding",
+                                        "message": ".card harus memiliki padding."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "border",
+                                        "message": ".card harus memiliki border."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "solid",
+                                        "message": "Border .card gunakan jenis solid."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Tulis CSS untuk kartu profil:\n\n• body: background-color lightyellow\n• h1: warna red, ukuran 30px\n• .card: padding 20px, border 1px solid red",
+                                "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                                "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "body harus punya background-color."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lightyellow",
+                                        "message": "background body harus lightyellow."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "red",
+                                        "message": "h1 harus berwarna red."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "30px",
+                                        "message": "Ukuran h1 harus 30px."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".card",
+                                        "message": "Harus ada selector .card."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "padding",
+                                        "message": ".card harus memiliki padding."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "border",
+                                        "message": ".card harus memiliki border."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "solid",
+                                        "message": "Border .card gunakan jenis solid."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Tulis CSS untuk kartu profil:\n\n• body: background-color lavender\n• h1: warna purple, ukuran 32px\n• .card: padding 20px, border 1px solid purple",
+                                "hint": "Atur body, h1, dan .card. Ingat font-size harus bersatuan px.",
+                                "starter_code": "body {\n\n}\nh1 {\n\n}\n.card {\n\n}",
+                                "language": "css",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "background",
+                                        "message": "body harus punya background-color."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "lavender",
+                                        "message": "background body harus lavender."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "purple",
+                                        "message": "h1 harus berwarna purple."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "32px",
+                                        "message": "Ukuran h1 harus 32px."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": ".card",
+                                        "message": "Harus ada selector .card."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "padding",
+                                        "message": ".card harus memiliki padding."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "border",
+                                        "message": ".card harus memiliki border."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "solid",
+                                        "message": "Border .card gunakan jenis solid."
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }
@@ -359,7 +1038,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Agar sebuah elemen menjadi wadah (container) flex, property yang tepat adalah ...",
-                        "options": ["display: block;", "display: flex;", "flex: display;", "align: center;"],
+                        "options": [
+                            "display: block;",
+                            "display: flex;",
+                            "flex: display;",
+                            "align: center;"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! display: flex membuat elemen menjadi flex container.",
                         "feedback_wrong": "Gunakan display: flex; untuk membuat wadah flex."
@@ -380,7 +1064,12 @@
                     {
                         "type": "multiple_choice",
                         "question": "Property yang digunakan untuk mengatur jarak antar-elemen pada flexbox adalah ...",
-                        "options": ["margin-flex", "gap", "space", "padding-between"],
+                        "options": [
+                            "margin-flex",
+                            "gap",
+                            "space",
+                            "padding-between"
+                        ],
                         "answer": 1,
                         "feedback_correct": "Benar! gap mengatur jarak antar-elemen flex.",
                         "feedback_wrong": "Jarak antar-elemen flex diatur dengan property gap."
@@ -402,29 +1091,281 @@
                         "type": "fill_code",
                         "prompt": "Lengkapi CSS berikut agar container menjadi flexbox.",
                         "template": ".container {\n    [[0]]\n    gap: 20px;\n}",
-                        "blanks": [["display: flex;", "display:flex;", "display: flex", "display:flex"]],
+                        "blanks": [
+                            [
+                                "display: flex;",
+                                "display:flex;",
+                                "display: flex",
+                                "display:flex"
+                            ]
+                        ],
                         "feedback_correct": "Hebat! Container kini menjadi flexbox.",
                         "feedback_wrong": "Gunakan display: flex; untuk menjadikan container sebagai flexbox."
                     },
                     {
                         "type": "editor",
-                        "study_case": "Susun kerangka website Profil Sekolah (final project):\n\n• <header> berisi <h1> 'SMK Harapan Bangsa'\n• <nav> berisi 3 link: Beranda, Profil, Kontak\n• Daftar (ul) program keahlian dengan 3 item: RPL, TKJ, DKV",
-                        "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
-                        "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
-                        "language": "html",
-                        "test_cases": [
-                            { "type": "contains", "value": "<header", "message": "Harus ada <header>." },
-                            { "type": "contains", "value": "<h1", "message": "Header harus berisi <h1>." },
-                            { "type": "contains", "value": "smk harapan bangsa", "message": "Judul harus 'SMK Harapan Bangsa'." },
-                            { "type": "contains", "value": "<nav", "message": "Harus ada <nav>." },
-                            { "type": "count", "value": "<a", "min": 3, "message": "Navigasi harus punya minimal tiga link <a>." },
-                            { "type": "contains", "value": "beranda", "message": "Navigasi harus memuat 'Beranda'." },
-                            { "type": "contains", "value": "kontak", "message": "Navigasi harus memuat 'Kontak'." },
-                            { "type": "contains", "value": "<ul", "message": "Harus ada daftar <ul>." },
-                            { "type": "count", "value": "<li", "min": 3, "message": "Daftar program keahlian harus punya minimal tiga <li>." }
-                        ],
-                        "feedback_correct": "Luar biasa! Kerangka website kamu sudah lengkap. 🎉",
-                        "feedback_wrong": "Periksa kembali: header + h1, nav dengan 3 link, dan ul dengan 3 item."
+                        "variants": {
+                            "a": {
+                                "study_case": "Susun kerangka website Profil Sekolah (final mini project):\n\n• <header> berisi <h1> 'Profil Sekolah'\n• <nav> berisi 3 link: Beranda, Profil, Kontak\n• Daftar (ul) dengan 3 item: RPL, TKJ, DKV",
+                                "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                                "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<header",
+                                        "message": "Harus ada <header>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Header harus berisi <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "profil sekolah",
+                                        "message": "Judul harus 'Profil Sekolah'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<nav",
+                                        "message": "Harus ada <nav>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<a",
+                                        "message": "Navigasi harus punya minimal tiga link <a>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beranda",
+                                        "message": "Navigasi harus memuat 'Beranda'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "b": {
+                                "study_case": "Susun kerangka website Toko Buku Cerdas (final mini project):\n\n• <header> berisi <h1> 'Toko Buku Cerdas'\n• <nav> berisi 3 link: Beranda, Katalog, Kontak\n• Daftar (ul) dengan 3 item: Buku Pelajaran, Novel, Komik",
+                                "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                                "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<header",
+                                        "message": "Harus ada <header>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Header harus berisi <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "toko buku cerdas",
+                                        "message": "Judul harus 'Toko Buku Cerdas'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<nav",
+                                        "message": "Harus ada <nav>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<a",
+                                        "message": "Navigasi harus punya minimal tiga link <a>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beranda",
+                                        "message": "Navigasi harus memuat 'Beranda'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "c": {
+                                "study_case": "Susun kerangka website Wisata Nusantara (final mini project):\n\n• <header> berisi <h1> 'Wisata Nusantara'\n• <nav> berisi 3 link: Beranda, Galeri, Kontak\n• Daftar (ul) dengan 3 item: Area Parkir, Toilet, Tempat Makan",
+                                "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                                "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<header",
+                                        "message": "Harus ada <header>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Header harus berisi <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "wisata nusantara",
+                                        "message": "Judul harus 'Wisata Nusantara'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<nav",
+                                        "message": "Harus ada <nav>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<a",
+                                        "message": "Navigasi harus punya minimal tiga link <a>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beranda",
+                                        "message": "Navigasi harus memuat 'Beranda'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "d": {
+                                "study_case": "Susun kerangka website Restoran Lezat (final mini project):\n\n• <header> berisi <h1> 'Restoran Lezat'\n• <nav> berisi 3 link: Beranda, Menu, Kontak\n• Daftar (ul) dengan 3 item: Nasi Goreng, Mie Ayam, Es Teh",
+                                "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                                "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<header",
+                                        "message": "Harus ada <header>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Header harus berisi <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "restoran lezat",
+                                        "message": "Judul harus 'Restoran Lezat'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<nav",
+                                        "message": "Harus ada <nav>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<a",
+                                        "message": "Navigasi harus punya minimal tiga link <a>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beranda",
+                                        "message": "Navigasi harus memuat 'Beranda'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            },
+                            "e": {
+                                "study_case": "Susun kerangka website OSIS Kreatif (final mini project):\n\n• <header> berisi <h1> 'OSIS Kreatif'\n• <nav> berisi 3 link: Beranda, Kegiatan, Kontak\n• Daftar (ul) dengan 3 item: Rapat Mingguan, Bakti Sosial, Lomba Sekolah",
+                                "hint": "Gunakan <header><h1>...</h1></header>, <nav> dengan tiga <a>, lalu <ul> dengan tiga <li>.",
+                                "starter_code": "<body>\n    <!-- Susun header, nav, dan daftar di sini -->\n</body>",
+                                "language": "html",
+                                "test_cases": [
+                                    {
+                                        "type": "contains",
+                                        "value": "<header",
+                                        "message": "Harus ada <header>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<h1",
+                                        "message": "Header harus berisi <h1>."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "osis kreatif",
+                                        "message": "Judul harus 'OSIS Kreatif'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<nav",
+                                        "message": "Harus ada <nav>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<a",
+                                        "message": "Navigasi harus punya minimal tiga link <a>.",
+                                        "min": 3
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "beranda",
+                                        "message": "Navigasi harus memuat 'Beranda'."
+                                    },
+                                    {
+                                        "type": "contains",
+                                        "value": "<ul",
+                                        "message": "Harus ada daftar <ul>."
+                                    },
+                                    {
+                                        "type": "count",
+                                        "value": "<li",
+                                        "message": "Daftar harus punya minimal tiga <li>.",
+                                        "min": 3
+                                    }
+                                ],
+                                "feedback_correct": "Bagus! Jawabanmu sudah benar.",
+                                "feedback_wrong": "Masih ada yang kurang. Periksa kembali sesuai ketentuan soal."
+                            }
+                        }
                     }
                 ]
             }

@@ -98,7 +98,7 @@ class ModuleService
      *
      * @return array<string, mixed>|null
      */
-    public function detail(string $id): ?array
+    public function detail(string $id, ?string $theme = null): ?array
     {
         $module = $this->find($id);
 
@@ -106,13 +106,13 @@ class ModuleService
             return null;
         }
 
-        $module['subModules'] = array_map(function (array $sub) use ($id) {
+        $module['subModules'] = array_map(function (array $sub) use ($id, $theme) {
             $questions = $this->questionsForSub($sub);
 
             if ($questions !== null) {
                 $sub['quiz'] = [
                     'questions' => array_map(
-                        fn (array $q) => $this->publicQuestion($q, $id),
+                        fn (array $q) => $this->publicQuestion($q, $id, $theme),
                         $questions,
                     ),
                 ];
@@ -130,17 +130,47 @@ class ModuleService
      *
      * @return array<int, array<string, mixed>>
      */
-    public function questionsFor(string $moduleId, int $subModuleId): array
+    public function questionsFor(string $moduleId, int $subModuleId, ?string $theme = null): array
     {
         $module = $this->find($moduleId);
 
         foreach ($module['subModules'] ?? [] as $sub) {
             if (($sub['id'] ?? null) === $subModuleId) {
-                return $this->questionsForSub($sub) ?? [];
+                $questions = $this->questionsForSub($sub) ?? [];
+
+                return array_map(fn (array $q) => $this->resolveVariant($q, $theme), $questions);
             }
         }
 
         return [];
+    }
+
+    /**
+     * Resolve a themed editor question to the variant for the given theme.
+     * Non-variant questions (and non-editor types) are returned unchanged.
+     *
+     * A themed editor question looks like:
+     *   { "type": "editor", "variants": { "a": {...}, "b": {...}, ... } }
+     * The variant merges up to a flat editor question (study_case, hint,
+     * starter_code, test_cases, ...).
+     *
+     * @param  array<string, mixed>  $q
+     * @return array<string, mixed>
+     */
+    protected function resolveVariant(array $q, ?string $theme): array
+    {
+        if (($q['type'] ?? 'editor') !== 'editor' || ! isset($q['variants']) || ! is_array($q['variants'])) {
+            return $q;
+        }
+
+        $variants = $q['variants'];
+        $chosen = $variants[$theme] ?? reset($variants);
+
+        if (! is_array($chosen)) {
+            return $q;
+        }
+
+        return array_merge(['type' => 'editor'], $chosen);
     }
 
     /**
@@ -173,8 +203,9 @@ class ModuleService
      * @param  array<string, mixed>  $q
      * @return array<string, mixed>
      */
-    protected function publicQuestion(array $q, string $moduleId): array
+    protected function publicQuestion(array $q, string $moduleId, ?string $theme = null): array
     {
+        $q = $this->resolveVariant($q, $theme);
         $type = $q['type'] ?? 'editor';
 
         return match ($type) {

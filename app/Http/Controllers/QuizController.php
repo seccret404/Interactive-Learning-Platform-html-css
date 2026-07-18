@@ -26,6 +26,7 @@ class QuizController extends Controller
             'questionIndex' => ['required', 'integer', 'min:0'],
             'answer' => ['nullable'],
             'code' => ['nullable', 'string'],
+            'theme' => ['nullable', 'string'],
         ]);
 
         $result = $this->quiz->check(
@@ -35,6 +36,7 @@ class QuizController extends Controller
             [
                 'answer' => $validated['answer'] ?? null,
                 'code' => $validated['code'] ?? '',
+                'theme' => $validated['theme'] ?? null,
             ],
         );
 

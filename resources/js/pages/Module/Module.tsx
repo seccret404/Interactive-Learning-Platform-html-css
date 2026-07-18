@@ -17,6 +17,9 @@ import {
     isSubModuleCompleted,
     moduleProgressPercent,
 } from '@/utils/progress';
+import { accentClasses, accentFor } from '@/utils/accent';
+
+const cleanTitle = (t: string) => t.replace(/^Modul \d+\s*—\s*/, '');
 
 export function Module() {
     const { moduleId } = useParams<{ moduleId: string }>();
@@ -64,6 +67,8 @@ export function Module() {
 
     const percent = moduleProgressPercent(module, progress);
     const moduleList = modules ?? [module];
+    const accent = accentClasses(moduleId);
+    const accentName = accentFor(moduleId);
 
     return (
         <AppLayout>
@@ -71,15 +76,18 @@ export function Module() {
                 to="/"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-brand-600"
             >
-                <ArrowLeftIcon className="h-4 w-4" /> Kembali ke menu
+                <ArrowLeftIcon className="h-4 w-4" /> Kembali ke beranda
             </Link>
 
             <header className="mt-5 flex items-start gap-4 animate-slide-up">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600">
+                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${accent.bgSoft} ${accent.text}`}>
                     <ModuleIcon name={module.icon} className="h-7 w-7" />
                 </span>
                 <div className="flex-1">
-                    <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+                    <span className={`text-xs font-bold uppercase tracking-wider ${accent.text}`}>
+                        &lt;{accentName}&gt; Materi
+                    </span>
+                    <h1 className="text-2xl font-bold tracking-tight text-ink">
                         {module.title}
                     </h1>
                     <p className="mt-1 text-sm text-slate-500">{module.description}</p>
@@ -111,16 +119,16 @@ export function Module() {
                                 }
                                 className={`flex w-full items-center gap-4 rounded-2xl border bg-white p-4 text-left shadow-sm transition-all duration-200 ${
                                     unlocked
-                                        ? 'border-slate-100 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-md'
+                                        ? `border-slate-100 hover:-translate-y-0.5 ${accent.hoverBorder} hover:shadow-md`
                                         : 'cursor-not-allowed border-slate-100 opacity-70'
                                 }`}
                             >
                                 <span
                                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-bold ${
                                         completed
-                                            ? 'bg-emerald-50 text-emerald-600'
+                                            ? 'bg-success-50 text-success-600'
                                             : unlocked
-                                              ? 'bg-brand-50 text-brand-600'
+                                              ? `${accent.bgSoft} ${accent.text}`
                                               : 'bg-slate-100 text-slate-400'
                                     }`}
                                 >
@@ -134,11 +142,11 @@ export function Module() {
                                 </span>
 
                                 <span className="flex-1">
-                                    <span className="block text-xs font-medium text-slate-400">
-                                        Sub-modul {index + 1}
+                                    <span className={`block text-xs font-bold uppercase tracking-wider ${accent.text}`}>
+                                        {module.title} {String(index + 1).padStart(2, '0')}
                                     </span>
-                                    <span className="block text-base font-semibold text-slate-800">
-                                        {sub.title}
+                                    <span className="block text-base font-semibold text-ink">
+                                        {cleanTitle(sub.title)}
                                     </span>
                                     <span className="block text-sm text-slate-500">
                                         {sub.description}
@@ -148,17 +156,17 @@ export function Module() {
                                 <span
                                     className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
                                         completed
-                                            ? 'bg-emerald-100 text-emerald-700'
+                                            ? 'bg-success-100 text-success-700'
                                             : unlocked
-                                              ? 'bg-brand-100 text-brand-700'
+                                              ? `${accent.bgSoft2} ${accent.text}`
                                               : 'bg-slate-100 text-slate-500'
                                     }`}
                                 >
                                     {completed
-                                        ? 'Completed'
+                                        ? 'Selesai'
                                         : unlocked
-                                          ? 'Unlocked'
-                                          : 'Locked'}
+                                          ? 'Terbuka'
+                                          : 'Terkunci'}
                                 </span>
                             </button>
                         </li>

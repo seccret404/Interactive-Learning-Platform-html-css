@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Support\CodeMatcher;
+
 /**
  * Validates a single quiz question submitted by the user against the answer key
  * defined in the module JSON. Validation is purely static — no user code is ever
@@ -25,7 +27,7 @@ class QuizService
      */
     public function check(string $moduleId, int $subModuleId, int $questionIndex, array $payload): array
     {
-        $questions = $this->modules->questionsFor($moduleId, $subModuleId);
+        $questions = $this->modules->questionsFor($moduleId, $subModuleId, $payload['theme'] ?? null);
         $question = $questions[$questionIndex] ?? null;
 
         if ($question === null) {
@@ -69,8 +71,8 @@ class QuizService
         $correct = ! empty($blanks);
 
         foreach ($blanks as $i => $accepted) {
-            $user = $this->normalize((string) ($given[$i] ?? ''));
-            $acceptedNormalized = array_map(fn ($v) => $this->normalize((string) $v), (array) $accepted);
+            $user = CodeMatcher::normalize((string) ($given[$i] ?? ''));
+            $acceptedNormalized = array_map(fn ($v) => CodeMatcher::normalize((string) $v), (array) $accepted);
 
             if (! in_array($user, $acceptedNormalized, true)) {
                 $correct = false;
@@ -90,10 +92,10 @@ class QuizService
     protected function checkEditor(array $question, string $code): array
     {
         $testCases = $question['test_cases'] ?? [];
-        $normalized = $this->normalize($code);
+        $normalized = CodeMatcher::normalize($code);
 
         if (empty($testCases)) {
-            $expected = $this->normalize($question['expected_output'] ?? '');
+            $expected = CodeMatcher::normalize($question['expected_output'] ?? '');
             $correct = $expected !== '' && $normalized === $expected;
 
             return [
@@ -111,7 +113,7 @@ class QuizService
         $allPassed = true;
 
         foreach ($testCases as $test) {
-            $passed = $this->runCase($test, $normalized);
+            $passed = CodeMatcher::matches($test, $normalized);
             $allPassed = $allPassed && $passed;
 
             $results[] = [
@@ -162,39 +164,5 @@ class QuizService
             'feedback' => $message,
             'results' => [],
         ];
-    }
-
-    /**
-     * Run a single editor test case against the normalized code.
-     *
-     * Supported types: contains, not_contains, count, regex, equals.
-     *
-     * @param  array<string, mixed>  $test
-     */
-    protected function runCase(array $test, string $normalizedCode): bool
-    {
-        $type = $test['type'] ?? 'contains';
-        $value = $this->normalize((string) ($test['value'] ?? ''));
-
-        return match ($type) {
-            'contains' => str_contains($normalizedCode, $value),
-            'not_contains' => ! str_contains($normalizedCode, $value),
-            'count' => substr_count($normalizedCode, $value) >= (int) ($test['min'] ?? 1),
-            'regex' => (bool) @preg_match('/'.str_replace('/', '\/', $test['value'] ?? '').'/i', $normalizedCode),
-            'equals' => $normalizedCode === $value,
-            default => false,
-        };
-    }
-
-    /**
-     * Normalize code/text for comparison: lowercase, collapse whitespace, trim.
-     * Makes matching tolerant of indentation and casing differences.
-     */
-    protected function normalize(string $code): string
-    {
-        $code = strtolower($code);
-        $code = preg_replace('/\s+/', ' ', $code) ?? $code;
-
-        return trim($code);
     }
 }

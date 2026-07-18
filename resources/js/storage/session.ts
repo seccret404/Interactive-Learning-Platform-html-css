@@ -1,13 +1,20 @@
 import type { SessionProgress } from '@/types';
 
 /**
- * sessionStorage-backed persistence for user progress.
+ * localStorage-backed persistence for user progress and profile.
  *
- * Per the project rules: NO database, NO localStorage. Progress lives only in
- * sessionStorage and is intentionally lost when the browser/tab is closed.
+ * Data is database-less and lives entirely in the browser. It persists across
+ * tabs and browser restarts (until the user resets progress or clears storage).
  */
 
 const STORAGE_KEY = 'ilp:progress';
+
+/** The five case-study themes (matches storage/final-projects and quiz variants). */
+export const THEMES = ['a', 'b', 'c', 'd', 'e'] as const;
+
+/** Pick a random case-study theme id. */
+export const randomTheme = (): string =>
+    THEMES[Math.floor(Math.random() * THEMES.length)];
 
 export const emptyProgress = (): SessionProgress => ({
     currentModule: null,
@@ -15,6 +22,8 @@ export const emptyProgress = (): SessionProgress => ({
     completedQuiz: [],
     completedModules: [],
     attempts: [],
+    theme: null,
+    profile: null,
 });
 
 /** Build the composite key used to track a completed quiz / sub-module. */
@@ -23,7 +32,7 @@ export const quizKey = (moduleId: string, subModuleId: number): string =>
 
 export function loadProgress(): SessionProgress {
     try {
-        const raw = sessionStorage.getItem(STORAGE_KEY);
+        const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return emptyProgress();
 
         const parsed = JSON.parse(raw) as Partial<SessionProgress>;
@@ -36,7 +45,7 @@ export function loadProgress(): SessionProgress {
 
 export function saveProgress(progress: SessionProgress): void {
     try {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     } catch {
         // Storage may be full or disabled; progress simply won't persist.
     }
@@ -44,7 +53,7 @@ export function saveProgress(progress: SessionProgress): void {
 
 export function clearProgress(): void {
     try {
-        sessionStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(STORAGE_KEY);
     } catch {
         /* no-op */
     }

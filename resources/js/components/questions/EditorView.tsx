@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { PlayIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/solid';
+import { PlayIcon } from '@heroicons/react/24/solid';
 import { Button } from '@/components/Button/Button';
 import { CodeEditor } from '@/components/CodeEditor/CodeEditor';
 import { StudyCase } from '@/components/StudyCase/StudyCase';
@@ -29,8 +28,7 @@ export function EditorView({
     passed,
     onPass,
 }: Props) {
-    const navigate = useNavigate();
-    const { recordAttempt, attemptsFor } = useProgress();
+    const { recordAttempt, attemptsFor, progress } = useProgress();
     const check = useCheckAnswer();
 
     const [code, setCode] = useState(question.starter_code);
@@ -47,7 +45,7 @@ export function EditorView({
 
     const run = () => {
         check.mutate(
-            { moduleId, subModuleId, questionIndex: index, code },
+            { moduleId, subModuleId, questionIndex: index, code, theme: progress.theme },
             {
                 onSuccess: (res) => {
                     setResult(res);
@@ -84,21 +82,13 @@ export function EditorView({
                 </div>
 
                 <div className="flex items-center justify-between gap-3">
-                    {wrong ? (
-                        <Button
-                            variant="secondary"
-                            onClick={() =>
-                                navigate(`/module/${moduleId}/theory/${subModuleId}`)
-                            }
-                            leftIcon={<ArrowUturnLeftIcon className="h-4 w-4" />}
-                        >
-                            Back To Theory
-                        </Button>
-                    ) : (
-                        <span className="text-xs text-slate-400">
-                            Tulis kode lalu jalankan untuk memeriksa jawaban.
-                        </span>
-                    )}
+                    <span
+                        className={`text-xs ${wrong ? 'text-rose-500' : 'text-slate-400'}`}
+                    >
+                        {wrong
+                            ? 'Perbaiki kodemu lalu jalankan lagi.'
+                            : 'Tulis kode lalu jalankan untuk memeriksa jawaban.'}
+                    </span>
 
                     <Button
                         variant="success"

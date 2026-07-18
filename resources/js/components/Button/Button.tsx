@@ -20,7 +20,7 @@ const VARIANTS: Record<Variant, string> = {
     ghost: 'bg-transparent text-slate-600 hover:bg-slate-100 focus-visible:ring-slate-300',
     danger: 'bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-400 shadow-sm',
     success:
-        'bg-emerald-600 text-white hover:bg-emerald-700 focus-visible:ring-emerald-400 shadow-sm',
+        'bg-success-600 text-white hover:bg-success-700 focus-visible:ring-success-400 shadow-sm',
 };
 
 const SIZES: Record<Size, string> = {

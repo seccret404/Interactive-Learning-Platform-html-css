@@ -84,6 +84,8 @@ export interface QuizAnswer {
     answer?: number | string[];
     /** Editor code submission. */
     code?: string;
+    /** Case-study theme (a–e), needed to grade the matching editor variant. */
+    theme?: string | null;
 }
 
 /** Result returned by POST /api/quiz/run. */
@@ -97,7 +99,7 @@ export interface QuizResult {
     results?: { passed: boolean; message: string }[];
 }
 
-/** A single recorded attempt, stored per quiz in sessionStorage. */
+/** A single recorded attempt, stored per quiz in localStorage. */
 export interface Attempt {
     id: string;
     moduleId: string;
@@ -108,7 +110,13 @@ export interface Attempt {
     code: string;
 }
 
-/** The full progress object persisted in sessionStorage. */
+/** The learner's editable profile (session-only, like all progress). */
+export interface UserProfile {
+    name: string;
+    kelas: string;
+}
+
+/** The full progress object persisted in localStorage. */
 export interface SessionProgress {
     currentModule: string | null;
     currentSubModule: number | null;
@@ -117,4 +125,76 @@ export interface SessionProgress {
     /** Module ids that are fully completed (all sub-modules done). */
     completedModules: string[];
     attempts: Attempt[];
+    /**
+     * The learner's case-study theme (a–e) for this session. Assigned randomly
+     * on first load and used for both quiz editor variants and the Final
+     * Project brief, so each learner works on a different (but equal-level)
+     * context.
+     */
+    theme: string | null;
+    /** The learner's profile, or null until they set it. */
+    profile: UserProfile | null;
+}
+
+/* ------------------------------------------------------------------ */
+/* Final Project                                                      */
+/* ------------------------------------------------------------------ */
+
+/** Lightweight entry for the theme picker. */
+export interface FinalProjectSummary {
+    id: string;
+    theme: string;
+    title: string;
+}
+
+/** One labelled block of the brief's reference content. */
+export interface KontenEntry {
+    label: string;
+    value?: string;
+    items?: string[];
+    table?: { headers: string[]; rows: string[][] };
+}
+
+/** A public grading criterion (label + weight, no matching rules). */
+export interface FinalProjectCriterion {
+    id: string;
+    label: string;
+    aspect: string;
+    points: number;
+}
+
+/** The full public brief served for a chosen theme. */
+export interface FinalProjectBrief {
+    id: string;
+    order: number;
+    theme: string;
+    title: string;
+    narasi: string;
+    client_needs: string[];
+    konten: KontenEntry[];
+    html_requirements: string[];
+    css_requirements: string[];
+    petunjuk: string[];
+    starter_html: string;
+    starter_css: string;
+    criteria: FinalProjectCriterion[];
+}
+
+/** A criterion after grading. */
+export interface GradedCriterion extends FinalProjectCriterion {
+    earned: number;
+    passed: boolean;
+}
+
+/** Result returned by POST /api/final-projects/{id}/submit. */
+export interface FinalProjectResult {
+    success: boolean;
+    score: number;
+    maxScore: number;
+    passedCount: number;
+    totalCount: number;
+    aspects: { aspect: string; earned: number; max: number }[];
+    criteria: GradedCriterion[];
+    feedback: string;
+    complete: boolean;
 }
